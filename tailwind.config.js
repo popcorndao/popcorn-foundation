@@ -58,6 +58,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         footer: "url('/images/footer-bg.svg')",
+        "mobile-footer": "url('/images/mobile-footer-bg.svg')",
       }),
       fontFamily: {
         landing: ["Avenir Next LT Pro", "sans-serif"],

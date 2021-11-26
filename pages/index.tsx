@@ -3,6 +3,7 @@ import { Transition } from "@headlessui/react";
 import { useWeb3React } from "@web3-react/core";
 import { DesktopFooter } from "components/DesktopFooter";
 import { MobileExpandableMenu } from "components/MobileExpandableMenu";
+import { MobileFooter } from "components/MobileFooter";
 import Navbar from "components/NavBar";
 import { store } from "context/store";
 import Link from "next/link";
@@ -74,6 +75,8 @@ export default function Index(): JSX.Element {
                 <Menu onClick={(e) => toggleMenu(true)} />
               </nav>
             </header>
+            <div className="h-screen"></div>
+            <MobileFooter />
           </div>
         </Transition>
       </div>
