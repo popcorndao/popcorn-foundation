@@ -6,7 +6,7 @@ import NavbarLink from "./NavBarLinks";
 const Navbar: React.FC = () => {
   const router = useRouter();
   return (
-    <nav className="flex h-20 px-14 bg-white">
+    <nav className="flex h-32 px-14 bg-white ">
       <div className="flex flex-row items-center w-10/12 px-8 mx-auto justify-between">
         <div>
           <Link href="/" passHref>
@@ -18,16 +18,16 @@ const Navbar: React.FC = () => {
         <ul className="flex flex-row space-x-16">
           <li>
             <NavbarLink
-              label="About Us"
+              label="About"
               url="/about"
               isActive={router.pathname === "/about"}
             />
           </li>
           <li>
             <NavbarLink
-              label="Get Grant"
-              url="/getgrant"
-              isActive={router.pathname === "/getgrant"}
+              label="Partners"
+              url="/partners"
+              isActive={router.pathname === "/partners"}
             />
           </li>
           <li>
@@ -37,6 +37,14 @@ const Navbar: React.FC = () => {
               isActive={router.pathname === "/ideas"}
             />
           </li>
+          <li>
+            <NavbarLink
+              label="Grants"
+              url="/grants"
+              isActive={router.pathname === "/grants"}
+            />
+          </li>
+
           <li>
             <NavbarLink
               label="PopcornDAO"
