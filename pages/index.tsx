@@ -5,25 +5,14 @@ import { DesktopFooter } from "components/DesktopFooter";
 import { MobileExpandableMenu } from "components/MobileExpandableMenu";
 import { MobileFooter } from "components/MobileFooter";
 import Navbar from "components/NavBar";
-import { store } from "context/store";
 import Link from "next/link";
 import router from "next/router";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu } from "react-feather";
 
 export default function Index(): JSX.Element {
   const context = useWeb3React<Web3Provider>();
-  const {
-    connector,
-    library,
-    chainId,
-    account,
-    activate,
-    deactivate,
-    active,
-    error,
-  } = context;
-  const { dispatch } = useContext(store);
+  const { error } = context;
 
   useEffect(() => {
     if (error) {
@@ -63,7 +52,6 @@ export default function Index(): JSX.Element {
                 <div>
                   <Link href="/" passHref>
                     <a>
-                      {/*TODO The logo is slightly blurred even though its copied straight from figma*/}
                       <img
                         src="/images/logo.png"
                         alt="Logo"
@@ -86,8 +74,6 @@ export default function Index(): JSX.Element {
         <header className="w-full bg-primary">
           <Navbar />
         </header>
-
-        {/* BLANK SECTION TO TEST FOOTER*/}
 
         <section className="w-full h-screen bg-white"></section>
         <DesktopFooter />
