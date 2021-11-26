@@ -1,0 +1,17 @@
+node_modules
+.next
+.env
+.env.rinkeby
+.env.localhost
+.env.mainnet
+dist
+tsconfig.tsbuildinfo
+yarn-error.log
+.openzeppelin
+!.openzeppelin/goerli*.json
+!.openzeppelin/mainnet*.json
+packages/contracts/artifacts
+packages/contracts/artifacts-ovm
+packages/contracts/cache
+packages/contracts/cache-ovm
+packages/contracts/typechain
