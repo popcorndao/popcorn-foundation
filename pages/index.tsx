@@ -47,7 +47,7 @@ export default function Index(): JSX.Element {
           leaveTo="opacity-0"
         >
           <div>
-            <header className="w-full bg-primary">
+            <header className="w-full ">
               <nav className="w-10/12 mx-auto pt-4 pb-3 border-b border-primaryLight flex flex-row items-center justify-between">
                 <div>
                   <Link href="/" passHref>

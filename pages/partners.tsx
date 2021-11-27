@@ -47,7 +47,7 @@ export default function Index(): JSX.Element {
           leaveTo="opacity-0"
         >
           <div>
-            <header className="w-full bg-primary">
+            <header className="w-full ">
               <nav className="w-10/12 mx-auto pt-4 pb-3 border-b border-primaryLight flex flex-row items-center justify-between">
                 <div>
                   <Link href="/" passHref>
@@ -63,9 +63,98 @@ export default function Index(): JSX.Element {
                 <Menu onClick={(e) => toggleMenu(true)} />
               </nav>
             </header>
-            <div className="h-screen"></div>
-            <MobileFooter />
+            <div
+              className="bg-mobile-content flex-shrink-0 flex-grow-0 w-full
+          h-full"
+              style={{
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <p className="font-bold text-4xl text-center my-16">Partners</p>
+              <a href="https://www.patch.io/" target="_blank">
+                <img
+                  src="images/partners/patch.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+
+              <a href="https://jumpcap.com/" target="_blank">
+                <img
+                  src="images/partners/jump.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ width: 200, marginBottom: 60 }}
+                />
+              </a>
+              <a href="https://www.newformcap.com/" target="_blank">
+                <img
+                  src="images/partners/nf.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+              <a href="https://kenetic.capital/" target="_blank">
+                <img
+                  src="images/partners/kenetic.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ width: 200, marginBottom: 60 }}
+                />
+              </a>
+              <a href="" target="_blank">
+                <img
+                  src="images/partners/cake.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ width: 200, marginBottom: 60 }}
+                />
+              </a>
+              <a href="https://www.thelao.io/" target="_blank">
+                <img
+                  src="images/partners/lao.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+              <a href="https://impossible.finance/" target="_blank">
+                <img
+                  src="images/partners/imp.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+              <a href="" target="_blank">
+                <img
+                  src="images/partners/cf.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+              <a href="https://www.bigbrain.holdings/" target="_blank">
+                <img
+                  src="images/partners/bb.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+              <a href="https://hestiainv.com/" target="_blank">
+                <img
+                  src="images/partners/hestia.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+              <a href="https://www.aminocapital.com/" target="_blank">
+                <img
+                  src="images/partners/amino.svg"
+                  className="cursor-pointer mx-auto"
+                  style={{ marginBottom: 60 }}
+                />
+              </a>
+            </div>
           </div>
+
+          <MobileFooter />
         </Transition>
       </div>
 
@@ -80,15 +169,96 @@ export default function Index(): JSX.Element {
           </div>
           <div className="w-8/12 pt-36">
             <h1 className="text-center text-6xl font-bold">Partners</h1>
-            <img src="images/partners.svg" className="mt-32" />
+            <div className="grid justify-items-stretch">
+              <div className="justify-self-center pl-16 mt-32 flex flex-wrap ">
+                <a href="https://www.patch.io/" target="_blank" className="">
+                  <img
+                    src="images/partners/patch.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+
+                <a href="https://jumpcap.com/" target="_blank">
+                  <img
+                    src="images/partners/jump.svg"
+                    className="cursor-pointer"
+                    style={{ width: 224, marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="https://www.newformcap.com/" target="_blank">
+                  <img
+                    src="images/partners/nf.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="https://kenetic.capital/" target="_blank">
+                  <img
+                    src="images/partners/kenetic.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="" target="_blank">
+                  <img
+                    src="images/partners/cake.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="https://www.thelao.io/" target="_blank">
+                  <img
+                    src="images/partners/lao.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="https://impossible.finance/" target="_blank">
+                  <img
+                    src="images/partners/imp.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="" target="_blank">
+                  <img
+                    src="images/partners/cf.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="https://www.bigbrain.holdings/" target="_blank">
+                  <img
+                    src="images/partners/bb.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="https://hestiainv.com/" target="_blank">
+                  <img
+                    src="images/partners/hestia.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+                <a href="https://www.aminocapital.com/" target="_blank">
+                  <img
+                    src="images/partners/amino.svg"
+                    className="cursor-pointer"
+                    style={{ marginRight: 40, marginBottom: 60 }}
+                  />
+                </a>
+              </div>
+            </div>
           </div>
           <div className="w-2/12 flex justify-end">
             <img className="mt-100" src="images/partners-right.svg" />
           </div>
         </div>
-        <div style={{ marginTop: -260 }}>
-          <DesktopFooter />
-        </div>
+      </div>
+      <div style={{ marginTop: -260 }}>
+        <DesktopFooter />
       </div>
     </div>
   );
