@@ -47,8 +47,8 @@ export default function Index(): JSX.Element {
           leaveTo="opacity-0"
         >
           <div>
-            <header className="w-full ">
-              <nav className="w-10/12 mx-auto pt-4 pb-3 border-b border-primaryLight flex flex-row items-center justify-between">
+            <header className="w-full bg-white border-b border-gray-300">
+              <nav className="w-10/12 mx-auto pt-4 pb-3  flex flex-row items-center justify-between">
                 <div>
                   <Link href="/" passHref>
                     <a>
@@ -152,9 +152,8 @@ export default function Index(): JSX.Element {
                 />
               </a>
             </div>
+            <MobileFooter />
           </div>
-
-          <MobileFooter />
         </Transition>
       </div>
 
