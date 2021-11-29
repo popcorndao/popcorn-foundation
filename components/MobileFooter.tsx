@@ -3,17 +3,10 @@ import { Facebook, GitHub, Twitter } from "react-feather";
 
 export const MobileFooter: React.FC = () => {
   return (
-    <div
-      className="bg-mobile-footer flex-shrink-0 flex-grow-0 w-full pt-72"
-      style={{
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="bg-mobile-footer bg-cover bg-no-repeat pt-72 md:pt-100">
       <section>
         <div className="w-10/12 mx-auto text-center ">
-          <h2 className="font-bold text-3xl leading-snug mb-4">
+          <h2 className="w-8/12 mx-auto font-bold text-3xl leading-snug mb-4">
             Subscribe to our newsletter
           </h2>
           <p className="text-lg font-thin">

@@ -16,6 +16,8 @@ module.exports = {
       lg: "1024px",
       // => @media (min-width: 1024px) { ... }
 
+      "2lg": "1280px",
+
       xl: "1840px",
       // => @media (min-width: 1840px) { ... }
 
@@ -34,6 +36,7 @@ module.exports = {
         128: "34rem",
         156: "41rem",
         260: "260px",
+        275: "275px",
       },
       lineHeight: {
         button: "32px",
