@@ -19,6 +19,16 @@ module.exports = {
     config.module = {
       ...config.module,
       rules: [
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: '@svgr/webpack',
+              options: { svgo: false },
+            },
+            'file-loader',
+          ],
+        },
         ...config.module.rules,
         {
           test: /\.(js|jsx|ts|tsx)$/,

@@ -1,0 +1,60 @@
+{
+  "name": "@popcorn/ui",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "author": "Popcorn",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean-dist": "rimraf dist/*",
+    "clean": "yarn rimraf dist",
+    "build": "yarn clean-dist && tsc -b",
+    "tsc": "tsc -b",
+    "story": "start-storybook",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-syntax-jsx": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@storybook/addon-actions": "^6.1.18",
+    "@storybook/addon-essentials": "^6.1.18",
+    "@storybook/addon-links": "^6.1.18",
+    "@storybook/react": "^6.1.18",
+    "@svgr/webpack": "^5.5.0",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "@types/jest": "^26.0.15",
+    "@types/storybook__react": "^5.2.1",
+    "@types/styled-components": "^5.1.4",
+    "@types/styled-jsx": "^2.2.8",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.1",
+    "jest": "^26.6.3",
+    "node-sass": "^5.0.0",
+    "react-is": "^17.0.1",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^10.1.0",
+    "source-map-loader": "^1.1.2",
+    "storybook-addon-material-ui": "^0.9.0-alpha.23",
+    "style-loader": "^2.0.0",
+    "styled-components": "^5.2.1",
+    "ts-jest": "^26.4.4",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@storybook/addon-essentials": "^6.1.18"
+  }
+}

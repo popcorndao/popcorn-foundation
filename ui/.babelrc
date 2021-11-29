@@ -1,0 +1,17 @@
+{
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "ignore": ["node_modules", "build",  "dist", ".next", "__tests__", "__stubs__"]
+      }
+    }
+  }

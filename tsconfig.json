@@ -28,7 +28,9 @@
       "dom",
       "es2017"
     ],
-    "paths": {}
+    "paths": {
+      "@popcorn/ui/*": ["ui/src/*"],
+    }
   },
   "include": [
     "next-env.d.ts",
