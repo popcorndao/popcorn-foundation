@@ -7,21 +7,22 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      screens: {
-        sm: "640px",
-        // => @media (min-width: 640px) { ... }
-  
-        md: "768px",
-        // => @media (min-width: 768px) { ... }
-  
-        lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
-  
-        xl: "1840px",
-        // => @media (min-width: 1840px) { ... }
-  
-        "2xl": "2560px",
-        // => @media (min-width: 1536px) { ... }
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      "2lg": "1280px",
+
+      xl: "1840px",
+      // => @media (min-width: 1840px) { ... }
+
+      "2xl": "2560px",
+      // => @media (min-width: 1536px) { ... }
     },
     extend: {
       spacing: {
@@ -34,6 +35,7 @@ module.exports = {
         112: "30rem",
         128: "34rem",
         156: "41rem",
+        275: "275px",
       },
       lineHeight: {
         button: "32px",
@@ -57,6 +59,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         footer: "url('/images/footer-bg.svg')",
         "mobile-footer": "url('/images/mobile-footer-bg.svg')",
+        "mobile-content": "url('/images/mobile-bg.svg')",
       }),
       fontFamily: {
         landing: ["Avenir Next LT Pro", "sans-serif"],

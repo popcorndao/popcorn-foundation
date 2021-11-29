@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
             </a>
           </Link>
         </div>
-        <ul className="flex flex-row space-x-16">
+        <ul className="flex flex-row space-x-8 2lg:space-x-16">
           <li>
             <NavbarLink
               label="About"
