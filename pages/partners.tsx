@@ -247,9 +247,9 @@ export default function Index(): JSX.Element {
             <img className="mt-100" src="images/partners-right.svg" />
           </div>
         </div>
-      </div>
-      <div className="lg:-mt-260">
-        <DesktopFooter />
+        <div className="lg:-mt-260">
+          <DesktopFooter />
+        </div>
       </div>
     </div>
   );
