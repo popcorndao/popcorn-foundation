@@ -63,15 +63,7 @@ export default function Index(): JSX.Element {
                 <Menu onClick={(e) => toggleMenu(true)} />
               </nav>
             </header>
-            <div
-              className="bg-mobile-content flex-shrink-0 flex-grow-0 w-full
-          h-full"
-              style={{
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
+            <div className="bg-mobile-content bg-cover bg-no-repeat sm:pb-72 md:pb-104">
               <p className="font-bold text-4xl text-center my-16">Partners</p>
               <a href="https://www.patch.io/" target="_blank">
                 <img
@@ -169,7 +161,7 @@ export default function Index(): JSX.Element {
           <div className="w-8/12 pt-36">
             <h1 className="text-center text-6xl font-bold">Partners</h1>
             <div className="grid justify-items-stretch">
-              <div className="justify-self-center pl-16 mt-32 flex flex-wrap ">
+              <div className="justify-self-center pl-16 my-32 flex flex-wrap ">
                 <a href="https://www.patch.io/" target="_blank" className="">
                   <img
                     src="images/partners/patch.svg"
