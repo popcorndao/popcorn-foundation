@@ -33,6 +33,7 @@ module.exports = {
         112: "30rem",
         128: "34rem",
         156: "41rem",
+        260: "260px",
       },
       lineHeight: {
         button: "32px",

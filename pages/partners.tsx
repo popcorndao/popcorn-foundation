@@ -256,7 +256,7 @@ export default function Index(): JSX.Element {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: -260 }}>
+      <div className="lg:-mt-260">
         <DesktopFooter />
       </div>
     </div>
