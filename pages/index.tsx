@@ -108,13 +108,13 @@ export default function Index(): JSX.Element {
         <header className="w-full bg-primary">
           <Navbar />
         </header>
-        <div className="flex flex-row ">
+        <div className="flex flex-row space-between">
           <div className="w-2/12">
             <img src="images/partners-left.svg" />
           </div>
-          <div className="w-8/12 pt-36 -ml-10 flex flex-row">
+          <div className="w-8/12 pt-36  flex flex-row">
             <div className="w-7/12">
-              <h1 className="text-6xl font-bold text-gray-900">Poporn</h1>
+              <h1 className="text-6xl font-bold text-gray-900">Popcorn</h1>
               <h1 className="text-6xl font-bold mt-3 pb-16">Foundation</h1>
               <p className="text-2xl font-extralight text-gray-600 pb-8">
                 The Popcorn Foundation is a non-profit foundation committed to
@@ -139,9 +139,9 @@ export default function Index(): JSX.Element {
             <img className="mt-100" src="images/partners-right.svg" />
           </div>
         </div>
-      </div>
-      <div className="lg:-mt-260">
-        <DesktopFooter />
+        <div className="lg:-mt-275">
+          <DesktopFooter />
+        </div>
       </div>
     </div>
   );
