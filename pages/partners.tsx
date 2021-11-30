@@ -162,7 +162,7 @@ export default function Index(): JSX.Element {
             <div className="w-8/12 pt-36">
               <h1 className="text-center text-6xl font-bold">Partners</h1>
               <div className="grid justify-items-stretch">
-                <div className="justify-self-center pl-24 my-32 flex flex-wrap">
+                <div className="justify-self-center pl-24 2lg:pl-36 xl:pl-44 2xl:pl-36 my-32 flex flex-wrap">
                   <a href="https://www.patch.io/" target="_blank" className="">
                     <img
                       src="images/partners/patch.svg"
