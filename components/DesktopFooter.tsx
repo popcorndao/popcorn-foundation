@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const DesktopFooter: React.FC = () => {
   return (
-    <section className="w-full pt-24">
+    <section className="w-full">
       <div
         className="bg-footer flex-shrink-0 flex-grow-0 w-full h-full pt-60"
         style={{
