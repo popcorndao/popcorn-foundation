@@ -108,7 +108,7 @@ export default function Index(): JSX.Element {
         <header className="w-full bg-primary">
           <Navbar />
         </header>
-        <div className="flex flex-row space-between">
+        <div className="flex flex-row space-between mb-48 xl:mb-84 2xl:mb-104">
           <div className="w-2/12">
             <img src="images/partners-left.svg" />
           </div>
