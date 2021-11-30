@@ -64,13 +64,8 @@ export default function Index(): JSX.Element {
               </nav>
             </header>
             <div
-              className="bg-mobile-content flex-shrink-0 flex-grow-0 w-full
+              className="bg-mobile-content bg-cover bg-no-repeat flex-shrink-0 flex-grow-0 w-full
           h-full mb-44"
-              style={{
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
             >
               <div className="w-11/12">
                 <img src="images/landing-page-graphic.svg" />
