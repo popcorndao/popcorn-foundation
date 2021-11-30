@@ -22,7 +22,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
         text-xl
         font-light 
         hover:font-bold
-        ${isActive ? "text-blue-600 font-bold" : "text-gray-600"}
+        ${isActive ? "text-gray-900 font-semibold" : "text-gray-600"}
       `}
         target={target || "_self"}
         onClick={(e) => {
@@ -41,7 +41,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
         text-xl
         font-light 
         hover:font-bold
-        ${isActive ? "text-blue-600 font-bold" : "text-gray-600"}
+        ${isActive ? "text-gray-900 font-semibold" : "text-gray-600"}
       `}
         target={target || "_self"}
         onClick={(e) => {
