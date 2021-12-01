@@ -1,13 +1,24 @@
+import { Web3Provider } from "@ethersproject/providers";
 import { Transition } from "@headlessui/react";
+import { useWeb3React } from "@web3-react/core";
 import { DesktopFooter } from "components/DesktopFooter";
 import { MobileExpandableMenu } from "components/MobileExpandableMenu";
 import { MobileFooter } from "components/MobileFooter";
 import Navbar from "components/NavBar";
 import Link from "next/link";
-import React, { useState } from "react";
+import router from "next/router";
+import React, { useEffect, useState } from "react";
 import { Menu } from "react-feather";
 
 export default function Index(): JSX.Element {
+  const context = useWeb3React<Web3Provider>();
+  const { error } = context;
+
+  useEffect(() => {
+    if (error) {
+      router.push("/error");
+    }
+  }, [error]);
   const [menuVisible, toggleMenu] = useState<boolean>(false);
 
   return (
