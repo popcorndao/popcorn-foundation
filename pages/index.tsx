@@ -104,11 +104,11 @@ export default function Index(): JSX.Element {
           <Navbar />
         </header>
         <div className="flex flex-row space-between mb-48 xl:mb-84 2xl:mb-104">
-          <div className="w-2/12">
+          <div className="w-1/12">
             <img src="images/partners-left.svg" />
           </div>
-          <div className="w-8/12 pt-36  flex flex-row">
-            <div className="w-7/12">
+          <div className="w-10/12 pt-36  flex flex-row mx-auto">
+            <div className="w-6/12">
               <h1 className="text-6xl font-bold text-gray-900">Popcorn</h1>
               <h1 className="text-6xl font-bold mt-3 pb-16">Foundation</h1>
               <p className="text-2xl font-extralight text-gray-600 pb-8">
@@ -126,11 +126,11 @@ export default function Index(): JSX.Element {
                 the public goods.
               </p>
             </div>
-            <div className="w-7/12 -mr-24">
+            <div className="w-6/12 -mr-24">
               <img src="images/landing-page-graphic.svg" />
             </div>
           </div>
-          <div className="w-2/12 flex justify-end">
+          <div className="w-1/12 flex justify-end">
             <img className="mt-100" src="images/partners-right.svg" />
           </div>
         </div>
