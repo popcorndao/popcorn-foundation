@@ -63,7 +63,36 @@ export default function Index(): JSX.Element {
                 <Menu onClick={(e) => toggleMenu(true)} />
               </nav>
             </header>
-            <div className="h-screen"></div>
+            <div
+              className="bg-mobile-content bg-cover bg-no-repeat flex-shrink-0 flex-grow-0 w-full
+          h-full mb-44"
+            >
+              <div className="w-11/12">
+                <img src="images/landing-page-graphic.svg" />
+              </div>
+              <div className="w-10/12 mx-auto mt-12">
+                <h1 className="text-4xl font-bold text-gray-900 text-center">
+                  Poporn
+                </h1>
+                <h1 className="text-4xl font-bold mt-3 pb-16 text-gray-900 text-center">
+                  Foundation
+                </h1>
+                <p className="text-md font-extralight text-gray-600 pb-8 text-center">
+                  The Popcorn Foundation is a non-profit foundation committed to
+                  advance human liberty, creativity, agency, thought and
+                  well-being globally through the development of equitable and
+                  humane software.
+                </p>
+                <p className=" text-md font-extralight text-gray-600 text-center">
+                  Using a decentralized governance model, the Foundation seeks
+                  to build a bridge between decentralized financing and social
+                  impact, lower barriers, and empower all members of the Defi
+                  ecosystem to align their values with social impact and
+                  sustainability, and collectively generate and allocate funds
+                  for the public goods.
+                </p>
+              </div>
+            </div>
             <MobileFooter />
           </div>
         </Transition>
@@ -74,9 +103,40 @@ export default function Index(): JSX.Element {
         <header className="w-full bg-primary">
           <Navbar />
         </header>
-
-        <section className="w-full h-screen bg-white"></section>
-        <DesktopFooter />
+        <div className="flex flex-row space-between mb-48 xl:mb-84 2xl:mb-104">
+          <div className="w-2/12">
+            <img src="images/partners-left.svg" />
+          </div>
+          <div className="w-8/12 pt-36  flex flex-row">
+            <div className="w-7/12">
+              <h1 className="text-6xl font-bold text-gray-900">Popcorn</h1>
+              <h1 className="text-6xl font-bold mt-3 pb-16">Foundation</h1>
+              <p className="text-2xl font-extralight text-gray-600 pb-8">
+                The Popcorn Foundation is a non-profit foundation committed to
+                advance human liberty, creativity, agency, thought and
+                well-being globally through the development of equitable and
+                humane software.
+              </p>
+              <p className=" text-2xl font-extralight text-gray-600">
+                Using a decentralized governance model, the Foundation seeks to
+                build a bridge between decentralized financing and social
+                impact, lower barriers, and empower all members of the Defi
+                ecosystem to align their values with social impact and
+                sustainability, and collectively generate and allocate funds for
+                the public goods.
+              </p>
+            </div>
+            <div className="w-7/12 -mr-24">
+              <img src="images/landing-page-graphic.svg" />
+            </div>
+          </div>
+          <div className="w-2/12 flex justify-end">
+            <img className="mt-100" src="images/partners-right.svg" />
+          </div>
+        </div>
+        <div className="lg:-mt-275">
+          <DesktopFooter />
+        </div>
       </div>
     </div>
   );
