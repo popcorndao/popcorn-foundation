@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Facebook, GitHub, Twitter } from "react-feather";
 
 export const DesktopFooter: React.FC = () => {
   return (
@@ -82,17 +83,20 @@ export const DesktopFooter: React.FC = () => {
               </Link>
               <div className="mt-8 flex flex-row space-x-4 items-center">
                 <Link href="https://github.com/popcorndao" passHref>
-                  <img className="cursor-pointer" src="images/gh.svg" />
+                  <GitHub className="hover:text-blue-600 cursor-pointer" />
                 </Link>
-
                 <Link href="https://www.facebook.com/PopcornDAO" passHref>
-                  <img className="cursor-pointer" src="images/fb.svg" />
+                  <Facebook className="hover:text-blue-600 cursor-pointer" />
                 </Link>
                 <Link href="https://twitter.com/Popcorn_DAO" passHref>
-                  <img className="cursor-pointer" src="images/twitter.svg" />
+                  <Twitter className="hover:text-blue-600 cursor-pointer" />
                 </Link>
                 <Link href="https://discord.gg/w9zeRTSZsq" passHref>
-                  <img className="cursor-pointer" src="images/discord2.svg" />
+                  <img
+                    src="/images/discord.svg"
+                    alt="discord"
+                    className="w-8 h-8 cursor-pointer discord"
+                  ></img>
                 </Link>
               </div>
             </div>

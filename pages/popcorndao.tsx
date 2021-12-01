@@ -63,7 +63,11 @@ export default function Index(): JSX.Element {
                 <Menu onClick={(e) => toggleMenu(true)} />
               </nav>
             </header>
-            <img className="py-5 px-5" src="images/rocket.svg" />
+            <img
+              className="pb-6 px-5 mx-auto"
+              style={{ marginTop: 48 }}
+              src="images/rocket-mobile.svg"
+            />
             <p
               className="text-4xl text-center font-bold"
               style={{ marginBottom: 32 }}
@@ -124,7 +128,7 @@ export default function Index(): JSX.Element {
             <a href="https://popcorn.network/" className=" cursor-pointer">
               <button
                 type="button"
-                className="border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mb-12"
+                className="border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mb-44 xl:mb-12"
                 style={{ width: 240, height: 64, marginTop: 32 }}
               >
                 Get Involved
