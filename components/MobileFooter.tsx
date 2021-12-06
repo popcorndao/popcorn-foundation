@@ -3,17 +3,10 @@ import { Facebook, GitHub, Twitter } from "react-feather";
 
 export const MobileFooter: React.FC = () => {
   return (
-    <div
-      className="bg-mobile-footer flex-shrink-0 flex-grow-0 w-full pt-72"
-      style={{
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className="bg-mobile-footer bg-cover bg-no-repeat pt-72 md:pt-100">
       <section>
         <div className="w-10/12 mx-auto text-center ">
-          <h2 className="font-bold text-3xl leading-snug mb-4">
+          <h2 className="w-8/12 mx-auto font-bold text-3xl leading-snug mb-4">
             Subscribe to our newsletter
           </h2>
           <p className="text-lg font-thin">
@@ -77,11 +70,17 @@ export const MobileFooter: React.FC = () => {
               ></img>
             </a>
           </Link>
-          <p className="font-light text-base py-4">
+          <p
+            className="font-light text-base"
+            style={{ marginTop: 32, marginBottom: 34 }}
+          >
             Popcorn is a carbon-neutral crypto savings account where fees fund
             educational, environmental and open source initiatives.
           </p>
-          <div className="flex flex-row space-x-4 items-center">
+          <div
+            className="flex flex-row space-x-4 items-center"
+            style={{ marginBottom: 52 }}
+          >
             <Link href="https://github.com/popcorndao" passHref>
               <GitHub className="hover:text-blue-600 cursor-pointer" />
             </Link>
@@ -99,7 +98,7 @@ export const MobileFooter: React.FC = () => {
               ></img>
             </Link>
           </div>
-          <div className="flex flex-row justify-evenly py-6">
+          <div className="flex flex-row justify-evenly">
             <div className="flex flex-col space-y-3 w-1/2">
               <p className="font-medium text-base uppercase">Site</p>
               <Link href="/" passHref>

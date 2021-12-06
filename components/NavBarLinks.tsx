@@ -15,15 +15,13 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
   onClick,
   target,
 }) => {
+  const className = `text-xl font-light hover:font-bold ${
+    isActive ? "text-gray-900 font-semibold" : "text-gray-600"
+  }`;
   if (!url) {
     return (
       <a
-        className={`
-        text-xl
-        font-light 
-        hover:font-bold
-        ${isActive ? "text-blue-600 font-bold" : "text-gray-600"}
-      `}
+        className={className}
         target={target || "_self"}
         onClick={(e) => {
           onClick && onClick();
@@ -37,12 +35,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = ({
   return (
     <Link href={url || ""} passHref>
       <a
-        className={`
-        text-xl
-        font-light 
-        hover:font-bold
-        ${isActive ? "text-blue-600 font-bold" : "text-gray-600"}
-      `}
+        className={className}
         target={target || "_self"}
         onClick={(e) => {
           onClick && onClick();

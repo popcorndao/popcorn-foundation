@@ -14,11 +14,10 @@ module.exports = {
       md: "768px",
       // => @media (min-width: 768px) { ... }
 
-      base: "1080px",
-      // => @media (min-width: 768px) { ... }
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
 
-      lg: "1480px",
-      // => @media (min-width: 1380px) { ... }
+      "2lg": "1280px",
 
       xl: "1840px",
       // => @media (min-width: 1840px) { ... }
@@ -36,7 +35,10 @@ module.exports = {
         104: "27rem",
         112: "30rem",
         128: "34rem",
+        146: "146px",
         156: "41rem",
+        260: "260px",
+        275: "275px",
       },
       lineHeight: {
         button: "32px",
@@ -60,6 +62,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         footer: "url('/images/footer-bg.svg')",
         "mobile-footer": "url('/images/mobile-footer-bg.svg')",
+        "mobile-content": "url('/images/mobile-bg.svg')",
       }),
       fontFamily: {
         landing: ["Avenir Next LT Pro", "sans-serif"],

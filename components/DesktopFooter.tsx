@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Facebook, GitHub, Twitter } from "react-feather";
 
 export const DesktopFooter: React.FC = () => {
   return (
-    <section className="w-full pt-24">
+    <section className="w-full">
       <div
         className="bg-footer flex-shrink-0 flex-grow-0 w-full h-full pt-60"
         style={{
@@ -82,59 +83,50 @@ export const DesktopFooter: React.FC = () => {
               </Link>
               <div className="mt-8 flex flex-row space-x-4 items-center">
                 <Link href="https://github.com/popcorndao" passHref>
-                  <img className="cursor-pointer" src="images/gh.svg" />
+                  <GitHub className="hover:text-blue-600 cursor-pointer" />
                 </Link>
-
                 <Link href="https://www.facebook.com/PopcornDAO" passHref>
-                  <img className="cursor-pointer" src="images/fb.svg" />
+                  <Facebook className="hover:text-blue-600 cursor-pointer" />
                 </Link>
                 <Link href="https://twitter.com/Popcorn_DAO" passHref>
-                  <img className="cursor-pointer" src="images/twitter.svg" />
+                  <Twitter className="hover:text-blue-600 cursor-pointer" />
                 </Link>
                 <Link href="https://discord.gg/w9zeRTSZsq" passHref>
-                  <img className="cursor-pointer" src="images/discord2.svg" />
+                  <img
+                    src="/images/discord.svg"
+                    alt="discord"
+                    className="w-8 h-8 cursor-pointer discord"
+                  ></img>
                 </Link>
               </div>
             </div>
             <div className="bg-primary flex flex-row justify-evenly py-6">
               <div className="flex flex-col space-y-3 w-1/2">
-                <p className="font-medium text-base uppercase">Site</p>
-                <Link href="/" passHref>
+                <p className="font-bold text-base uppercase">Site</p>
+                <Link href="/about" passHref>
                   <a className="hover:text-blue-600 font-landing font-light">
-                    Home
+                    About
                   </a>
                 </Link>
-                <Link href="https://medium.com/popcorndao" passHref>
-                  <a
-                    className="hover:text-blue-600 font-light"
-                    target="_window"
-                  >
-                    Blog
+                <Link href="/partners" passHref>
+                  <a className="hover:text-blue-600 font-light">Partners</a>
+                </Link>
+                <Link href="/ideas" passHref>
+                  <a className="hover:text-blue-600 font-light">Ideas</a>
+                </Link>
+                <Link href="/grants" passHref>
+                  <a className="hover:text-blue-600 cursor-pointer font-light">
+                    Grants
                   </a>
                 </Link>
-                <Link
-                  href="https://etherscan.io/token/0xd0cd466b34a24fcb2f87676278af2005ca8a78c4"
-                  passHref
-                >
-                  <a
-                    className="hover:text-blue-600 font-light"
-                    target="_window"
-                  >
-                    Popcorn (POP) Token
-                  </a>
-                </Link>
-                <Link href="https://launch.popcorn.network/" passHref>
-                  <a
-                    href="https://launch.popcorn.network/"
-                    className="hover:text-blue-600 cursor-pointer font-light"
-                    target="_window"
-                  >
-                    Token Launch Auction
+                <Link href="/popcorndao" passHref>
+                  <a className="hover:text-blue-600 cursor-pointer font-light">
+                    PopcornDAO
                   </a>
                 </Link>
               </div>
               <div className="flex flex-col space-y-3 w-1/2">
-                <p className="font-medium text-base uppercase">Connect</p>
+                <p className="font-bold text-base uppercase">Connect</p>
 
                 <a
                   href="https://twitter.com/Popcorn_DAO"
@@ -160,15 +152,20 @@ export const DesktopFooter: React.FC = () => {
                   Github
                 </a>
               </div>
-              <div className="flex flex-col space-y-6 w-1/2">
-                <p className="font-medium text-base uppercase ">Contact Us</p>
+              <div className="flex flex-col space-y-3 w-1/2">
+                <p className="font-bold text-base uppercase ">Contact Us</p>
                 <Link href="mailto:info@popcorn.foundation" passHref>
                   <a className="hover:text-blue-600 font-light">
                     info@popcorn.foundation
                   </a>
                 </Link>
 
-                <p className="font-medium text-base uppercase">Documentation</p>
+                <p
+                  className="font-bold text-base uppercase"
+                  style={{ marginTop: 32 }}
+                >
+                  Documentation
+                </p>
                 <Link href="" passHref>
                   <a className="hover:text-blue-600  font-light">Gitbook</a>
                 </Link>

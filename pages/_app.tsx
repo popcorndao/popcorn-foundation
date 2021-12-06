@@ -1,11 +1,6 @@
-import { DualActionModalContainer } from "components/Modal/DualActionModalContainer";
-import DualActionWideModalContainer from "components/Modal/DualActionWideModalContainer";
-import { SingleActionModalContainer } from "components/Modal/SingleActionModalContainer";
-import NotificationsContainer from "components/Notifications/NotificationsContainer";
 import Head from "next/head";
 import Router from "next/router";
 import React, { useEffect, useState } from "react";
-import { StateProvider } from "../context/store";
 import "../styles/globals.css";
 
 export default function MyApp(props) {
@@ -47,13 +42,7 @@ export default function MyApp(props) {
           rel="stylesheet"
         ></link>
       </Head>
-      <StateProvider>
-        <SingleActionModalContainer />
-        <DualActionModalContainer />
-        <DualActionWideModalContainer />
-        <Component {...pageProps} />
-        <NotificationsContainer />
-      </StateProvider>
+      <Component {...pageProps} />
     </React.Fragment>
   );
 }

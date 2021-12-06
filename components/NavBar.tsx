@@ -6,8 +6,8 @@ import NavbarLink from "./NavBarLinks";
 const Navbar: React.FC = () => {
   const router = useRouter();
   return (
-    <nav className="flex h-32 px-14 bg-white ">
-      <div className="flex flex-row items-center w-10/12 px-8 mx-auto justify-between">
+    <nav className="flex h-32 bg-white">
+      <div className="flex flex-row items-center w-10/12 mx-auto justify-between">
         <div>
           <Link href="/" passHref>
             <a>
@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
             </a>
           </Link>
         </div>
-        <ul className="flex flex-row space-x-16">
+        <ul className="flex flex-row space-x-8 2lg:space-x-16">
           <li>
             <NavbarLink
               label="About"
