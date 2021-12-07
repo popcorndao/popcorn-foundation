@@ -124,7 +124,7 @@ const MobileIdeasCard = ({ article }) => {
       target="_blank"
       className="relative drop-shadow-3xl transition duration-500 ease-in-out transform hover:scale-102 cursor-pointer z-10"
     >
-      <div className="mb-24">
+      <div className="mb-24 mx-auto" style={{ width: "83vw" }}>
         <img
           className="mb-12 object-cover mx-auto"
           style={{ width: "83vw", height: "69vw", borderRadius: "40px" }}
@@ -206,10 +206,8 @@ const IndexPage = () => {
                 <Menu onClick={(e) => toggleMenu(true)} />
               </nav>
             </header>
-            <section className="w-10/12 mx-auto mb-28">
-              <h2 className="font-bold text-3xl mb-8 text-center mt-12">
-                Ideas
-              </h2>
+            <section className="w-10/12 mx-auto mt-12 mb-24">
+              <h2 className="font-bold text-3xl mb-8 text-center">Ideas</h2>
               <p className="text-lg font-light font-landing text-gray-500 text-center ">
                 Read the latest stories and insights from us and those we
                 support.
