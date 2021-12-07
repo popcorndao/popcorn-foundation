@@ -223,11 +223,11 @@ const IndexPage = () => {
           }}
         >
           <div className="w-10/12 mx-auto pt-20 flex flex-row justify-between items-center">
-            <div className="w-5/12">
+            <div className="w-6/12">
               <h2 className="w-11/12 font-bold text-6xl xl:text-7xl leading-snug mb-8">
                 Get Grant
               </h2>
-              <p className="text-2xl font-landing text-gray-500 w-[800px] font-light">
+              <p className="text-2xl font-landing text-gray-500 font-light">
                 Potential beneficiaries of the Popcorn Foundation must be
                 nominated by the Popcorn Foundation or by POP token holders
                 through a multi-step beneficiary nomination process.
