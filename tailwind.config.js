@@ -18,13 +18,16 @@ module.exports = {
 
       "2lg": "1280px",
 
-      xl: "1840px",
-      // => @media (min-width: 1840px) { ... }
+      xl: "1921px",
+      // => @media (min-width: 1921px) { ... }
 
       "2xl": "2560px",
       // => @media (min-width: 1536px) { ... }
     },
     extend: {
+      dropShadow: {
+        "3xl": "0 0 5px rgba(0, 0, 0, 0.1)",
+      },
       spacing: {
         18: "4.5rem",
         72: "18rem",
@@ -75,5 +78,5 @@ module.exports = {
       cursor: ["disabled"],
     },
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp")],
 };
