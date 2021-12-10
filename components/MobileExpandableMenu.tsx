@@ -37,7 +37,7 @@ export const MobileExpandableMenu: React.FC<MobileExpandableMenuProps> = ({
             style={{ height: 0.72 }}
           ></div>
 
-          <Link href="/getgrant" passHref>
+          <Link href="/grants" passHref>
             <a>
               <h1
                 className="ml-3 text-4xl font-bold text-white hover:text-gray-700 font-landing"
