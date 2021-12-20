@@ -13,7 +13,7 @@ export const MobileExpandableMenu: React.FC<MobileExpandableMenuProps> = ({
   return (
     <div className="z-10 h-screen nav-width">
       <div className="relative w-full h-full transition-opacity duration-1000 ease-in-out mobile-menu-bg">
-        <div className="w-screen px-6 mx-auto nav-animation">
+        <div className="w-screen px-10 mx-auto nav-animation ">
           <div className="grid mb-10 justify-items-stretch">
             <XIcon
               onClick={() => toggleMenuVisible(false)}
