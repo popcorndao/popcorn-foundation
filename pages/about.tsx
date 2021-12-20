@@ -1,14 +1,21 @@
 import { Transition } from "@headlessui/react";
+import Burger from "components/Burger";
 import { DesktopFooter } from "components/DesktopFooter";
+import Menu from "components/Menu";
 import { MobileExpandableMenu } from "components/MobileExpandableMenu";
 import { MobileFooter } from "components/MobileFooter";
 import Navbar from "components/NavBar";
 import Link from "next/link";
-import React, { useState } from "react";
-import { Menu } from "react-feather";
+import React, { useRef, useState } from "react";
+import FocusLock from "react-focus-lock";
+import { useOnClickOutside } from "../hooks";
 
 export default function Index(): JSX.Element {
   const [menuVisible, toggleMenu] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+  useOnClickOutside(node, () => setOpen(false));
 
   return (
     <div className="font-landing">
@@ -37,30 +44,39 @@ export default function Index(): JSX.Element {
         >
           <div>
             <header className="w-full bg-white border-b border-gray-300">
-              <nav className="w-10/12 mx-auto pt-4 pb-3  flex flex-row items-center justify-between">
+              <nav className="flex flex-row items-center justify-between p-6 border-b border-primaryLight">
                 <div>
                   <Link href="/" passHref>
                     <a>
                       <img
                         src="/images/logo.png"
                         alt="Logo"
-                        className="h-14 flex-grow-0 flex-shrink-0"
+                        className="flex-grow-0 flex-shrink-0 h-14"
                       ></img>
                     </a>
                   </Link>
                 </div>
-                <Menu onClick={(e) => toggleMenu(true)} />
+                <div ref={node}>
+                  <FocusLock disabled={!open}>
+                    <Burger
+                      open={open}
+                      setOpen={setOpen}
+                      aria-controls={menuId}
+                    />
+                    <Menu open={open} setOpen={setOpen} id={menuId} />
+                  </FocusLock>
+                </div>
               </nav>
             </header>
             <h1
-              className="text-center text-4xl font-bold"
+              className="text-4xl font-bold text-center"
               style={{ marginTop: 52, marginBottom: 48 }}
             >
               Our Values
             </h1>
             <img className="mx-auto" src="images/about-mobile/diversity.svg" />
             <h1
-              className="text-gray-900 text-3xl text-center"
+              className="text-3xl text-center text-gray-900"
               style={{
                 fontWeight: 600,
                 marginBottom: 16,
@@ -69,7 +85,7 @@ export default function Index(): JSX.Element {
               Diversity & Inclusion
             </h1>
             <p
-              className="font-light text-gray-500 w-11/12 mx-auto text-center"
+              className="w-11/12 mx-auto font-light text-center text-gray-500"
               style={{
                 fontSize: "24px",
                 lineHeight: "32px",
@@ -86,7 +102,7 @@ export default function Index(): JSX.Element {
               src="images/about-mobile/accessibility.svg"
             />
             <h1
-              className="text-gray-900 text-3xl text-center"
+              className="text-3xl text-center text-gray-900"
               style={{
                 fontWeight: 600,
                 marginBottom: 16,
@@ -95,7 +111,7 @@ export default function Index(): JSX.Element {
               Accessibility
             </h1>
             <p
-              className="font-light text-gray-500 w-11/12 mx-auto text-center"
+              className="w-11/12 mx-auto font-light text-center text-gray-500"
               style={{
                 fontSize: "24px",
                 lineHeight: "32px",
@@ -109,7 +125,7 @@ export default function Index(): JSX.Element {
 
             <img className="mx-auto" src="images/about-mobile/leadership.svg" />
             <h1
-              className="text-gray-900 text-3xl text-center"
+              className="text-3xl text-center text-gray-900"
               style={{
                 fontWeight: 600,
                 marginBottom: 16,
@@ -118,7 +134,7 @@ export default function Index(): JSX.Element {
               Community
             </h1>
             <p
-              className="font-light text-gray-500 w-11/12 mx-auto text-center"
+              className="w-11/12 mx-auto font-light text-center text-gray-500"
               style={{
                 fontSize: "24px",
                 lineHeight: "32px",
@@ -134,7 +150,7 @@ export default function Index(): JSX.Element {
 
             <img className="mx-auto" src="images/about-mobile/agency.svg" />
             <h1
-              className="text-gray-900 text-3xl text-center"
+              className="text-3xl text-center text-gray-900"
               style={{
                 fontWeight: 600,
                 marginBottom: 16,
@@ -143,7 +159,7 @@ export default function Index(): JSX.Element {
               Agency
             </h1>
             <p
-              className="font-light text-gray-500 text-center w-11/12 mx-auto"
+              className="w-11/12 mx-auto font-light text-center text-gray-500"
               style={{
                 fontSize: "24px",
                 lineHeight: "32px",
@@ -158,7 +174,7 @@ export default function Index(): JSX.Element {
 
             <img className="mx-auto" src="images/about-mobile/community.svg" />
             <h1
-              className="text-gray-900 text-3xl text-center"
+              className="text-3xl text-center text-gray-900"
               style={{
                 fontWeight: 600,
                 marginBottom: 16,
@@ -167,7 +183,7 @@ export default function Index(): JSX.Element {
               Leadership
             </h1>
             <p
-              className="font-light text-gray-500 text-center w-11/12 mx-auto"
+              className="w-11/12 mx-auto font-light text-center text-gray-500"
               style={{
                 fontSize: "24px",
                 lineHeight: "32px",
@@ -184,14 +200,14 @@ export default function Index(): JSX.Element {
       </div>
 
       {/* DESKTOP + TABLET VERSION */}
-      <div className="hidden lg:flex flex-col w-full h-full">
+      <div className="flex-col hidden w-full h-full lg:flex">
         <header className="w-full bg-primary">
           <Navbar />
         </header>
 
         <section className="w-10/12 mx-auto" style={{ paddingTop: 120 }}>
           <h1
-            className="text-gray-900 font-landing font-bold"
+            className="font-bold text-gray-900 font-landing"
             style={{ fontSize: 72 }}
           >
             Our Values
@@ -240,7 +256,7 @@ export default function Index(): JSX.Element {
                 Accessibility
               </h1>
               <p
-                className="font-light text-gray-900 w-10/12"
+                className="w-10/12 font-light text-gray-900"
                 style={{
                   fontSize: "24px",
                   lineHeight: "32px",
@@ -260,7 +276,7 @@ export default function Index(): JSX.Element {
             <div className="w-1/2 my-auto">
               <img src="/images/about/community.svg" />
             </div>
-            <div className="w-1/2 my-auto  ml-40">
+            <div className="w-1/2 my-auto ml-40">
               <h1
                 className="text-gray-900"
                 style={{
@@ -299,7 +315,7 @@ export default function Index(): JSX.Element {
                 Agency
               </h1>
               <p
-                className="font-light text-gray-900 w-10/12"
+                className="w-10/12 font-light text-gray-900"
                 style={{
                   fontSize: "24px",
                   lineHeight: "32px",
@@ -319,7 +335,7 @@ export default function Index(): JSX.Element {
             <div className="w-1/2 my-auto">
               <img src="/images/about/leadership.svg" />
             </div>
-            <div className="w-1/2 my-auto  ml-40">
+            <div className="w-1/2 my-auto ml-40">
               <h1
                 className="text-gray-900"
                 style={{

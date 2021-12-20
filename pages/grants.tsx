@@ -1,15 +1,21 @@
 import { Transition } from "@headlessui/react";
+import Burger from "components/Burger";
 import { DesktopFooter } from "components/DesktopFooter";
+import Menu from "components/Menu";
 import { MobileExpandableMenu } from "components/MobileExpandableMenu";
 import { MobileFooter } from "components/MobileFooter";
 import Navbar from "components/NavBar";
 import Link from "next/link";
-import React, { useState } from "react";
-import { Menu } from "react-feather";
+import React, { useRef, useState } from "react";
+import FocusLock from "react-focus-lock";
+import { useOnClickOutside } from "../hooks";
 
 const IndexPage = () => {
   const [menuVisible, toggleMenu] = useState<boolean>(false);
-
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+  useOnClickOutside(node, () => setOpen(false));
   return (
     <div className="font-landing">
       {/* MOBILE VERSION */}
@@ -37,29 +43,38 @@ const IndexPage = () => {
         >
           <div>
             <header className="w-full bg-white border-b border-gray-300">
-              <nav className="w-10/12 mx-auto pt-4 pb-3  flex flex-row items-center justify-between">
+              <nav className="flex flex-row items-center justify-between w-10/12 pt-4 pb-3 mx-auto">
                 <div>
                   <Link href="/" passHref>
                     <a>
                       <img
                         src="/images/logo.png"
                         alt="Logo"
-                        className="h-14 flex-grow-0 flex-shrink-0"
+                        className="flex-grow-0 flex-shrink-0 h-14"
                       ></img>
                     </a>
                   </Link>
                 </div>
-                <Menu onClick={(e) => toggleMenu(true)} />
+                <div ref={node}>
+                  <FocusLock disabled={!open}>
+                    <Burger
+                      open={open}
+                      setOpen={setOpen}
+                      aria-controls={menuId}
+                    />
+                    <Menu open={open} setOpen={setOpen} id={menuId} />
+                  </FocusLock>
+                </div>
               </nav>
             </header>
             <section
               className="w-10/12 mx-auto "
               style={{ marginBottom: "200px" }}
             >
-              <h2 className="font-bold text-3xl mb-8 text-center mt-12">
+              <h2 className="mt-12 mb-8 text-3xl font-bold text-center">
                 Get Grant
               </h2>
-              <p className="text-lg font-light font-landing text-gray-500 text-center ">
+              <p className="text-lg font-light text-center text-gray-500 font-landing ">
                 Potential beneficiaries of the Popcorn Foundation must be
                 nominated by the Popcorn Foundation or by POP token holders
                 through a multi-step beneficiary nomination process.
@@ -84,7 +99,7 @@ const IndexPage = () => {
             <section className="mb-40" style={{ height: "400px" }}>
               <div className="relative">
                 <img
-                  className="absolute z-0 top-0"
+                  className="absolute top-0 z-0"
                   src="images/grantmobile/mobilegrantleft.svg"
                 />
 
@@ -95,14 +110,14 @@ const IndexPage = () => {
                     style={{ marginBottom: "64px" }}
                   />
                   <h1
-                    className="font-semibold text-3xl font-gray-900 text-center"
+                    className="text-3xl font-semibold text-center font-gray-900"
                     style={{ marginBottom: "16px" }}
                   >
                     Environment
                   </h1>
-                  <div className="sm:w-10/12 mx-auto">
+                  <div className="mx-auto sm:w-10/12">
                     <p
-                      className="text-base font-light font-landing text-gray-500 text-center"
+                      className="text-base font-light text-center text-gray-500 font-landing"
                       style={{ marginRight: "24px", marginLeft: "24px" }}
                     >
                       We are committed to supporting activities that strengthen
@@ -125,14 +140,14 @@ const IndexPage = () => {
                 style={{ marginBottom: "64px" }}
               />
               <h1
-                className="font-semibold text-3xl font-gray-900 text-center"
+                className="text-3xl font-semibold text-center font-gray-900"
                 style={{ marginBottom: "16px" }}
               >
                 Free and Open Source Software
               </h1>
-              <div className="sm:w-10/12 mx-auto">
+              <div className="mx-auto sm:w-10/12">
                 <p
-                  className="text-base font-light font-landing text-gray-500 text-center"
+                  className="text-base font-light text-center text-gray-500 font-landing"
                   style={{ marginRight: "24px", marginLeft: "24px" }}
                 >
                   We support the development of free and open source software
@@ -149,14 +164,14 @@ const IndexPage = () => {
                 style={{ marginBottom: "64px" }}
               />
               <h1
-                className="font-semibold text-3xl font-gray-900 text-center"
+                className="text-3xl font-semibold text-center font-gray-900"
                 style={{ marginBottom: "16px" }}
               >
                 Education
               </h1>
-              <div className="sm:w-10/12 mx-auto">
+              <div className="mx-auto sm:w-10/12">
                 <p
-                  className="text-base font-light font-landing text-gray-500 text-center"
+                  className="text-base font-light text-center text-gray-500 font-landing"
                   style={{ marginRight: "24px", marginLeft: "24px" }}
                 >
                   Our goal is to strengthen the capacity of communities to
@@ -171,24 +186,24 @@ const IndexPage = () => {
             <section className="mb-40" style={{ height: "560px" }}>
               <div className="relative">
                 <img
-                  className="absolute z-0 top-0 right-0"
+                  className="absolute top-0 right-0 z-0"
                   src="images/grantmobile/mobilegrantright.svg"
                 />
 
-                <div className="absolute  z-20" style={{ top: "-100px" }}>
+                <div className="absolute z-20" style={{ top: "-100px" }}>
                   <img
                     className="mx-auto mb-20"
                     src="images/grantmobile/inequality.png"
                   />
                   <h1
-                    className="font-semibold text-3xl font-gray-900 text-center sm:mb-24"
+                    className="text-3xl font-semibold text-center font-gray-900 sm:mb-24"
                     style={{ marginBottom: "16px" }}
                   >
                     Inequality
                   </h1>
-                  <div className="sm:w-10/12 mx-auto">
+                  <div className="mx-auto sm:w-10/12">
                     <p
-                      className="text-base font-light font-landing text-gray-500 text-center"
+                      className="text-base font-light text-center text-gray-500 font-landing"
                       style={{ marginRight: "24px", marginLeft: "24px" }}
                     >
                       Our goal is to help reduce inequality and enable a life
@@ -209,25 +224,25 @@ const IndexPage = () => {
       </div>
 
       {/* DESKTOP + TABLET VERSION */}
-      <div className="hidden lg:flex flex-col w-full h-full">
+      <div className="flex-col hidden w-full h-full lg:flex">
         <header className="w-full bg-primary">
           <Navbar />
         </header>
 
         <section
-          className="bg-popcorn1-pattern flex-shrink-0 flex-grow-0 w-full h-full xl:mb-24"
+          className="flex-grow-0 flex-shrink-0 w-full h-full bg-popcorn1-pattern xl:mb-24"
           style={{
             backgroundRepeat: "no-repeat",
             backgroundSize: "auto",
             backgroundPosition: "left top",
           }}
         >
-          <div className="w-10/12 mx-auto pt-20 flex flex-row justify-between items-center">
+          <div className="flex flex-row items-center justify-between w-10/12 pt-20 mx-auto">
             <div className="w-6/12">
-              <h2 className="w-11/12 font-bold text-6xl xl:text-7xl leading-snug mb-8">
+              <h2 className="w-11/12 mb-8 text-6xl font-bold leading-snug xl:text-7xl">
                 Get Grant
               </h2>
-              <p className="text-2xl font-landing text-gray-500 font-light">
+              <p className="text-2xl font-light text-gray-500 font-landing">
                 Potential beneficiaries of the Popcorn Foundation must be
                 nominated by the Popcorn Foundation or by POP token holders
                 through a multi-step beneficiary nomination process.
@@ -253,16 +268,16 @@ const IndexPage = () => {
           </div>
         </section>
         <section
-          className="bg-popcorn3-pattern flex-shrink-0 flex-grow-0 w-full h-full mt-24"
+          className="flex-grow-0 flex-shrink-0 w-full h-full mt-24 bg-popcorn3-pattern"
           style={{
             backgroundRepeat: "no-repeat",
             backgroundSize: "auto",
             backgroundPosition: "left top",
           }}
         >
-          <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
+          <div className="flex flex-row items-center justify-between w-10/12 mx-auto">
             <div className="w-5/12">
-              <h2 className="w-11/12 font-bold text-5xl xl:text-6xl leading-snug mb-4">
+              <h2 className="w-11/12 mb-4 text-5xl font-bold leading-snug xl:text-6xl">
                 Environment
               </h2>
               <p className="text-2xl font-landing text-gray-500 w-[620px] font-light">
@@ -275,7 +290,7 @@ const IndexPage = () => {
                 the effects of climate change and environmental degradation.
               </p>
             </div>
-            <div className="w-6/12 relative flex flex-row justify-end">
+            <div className="relative flex flex-row justify-end w-6/12">
               <img
                 src="/images/enivronment2.png"
                 alt="tree"
@@ -284,8 +299,8 @@ const IndexPage = () => {
             </div>
           </div>
         </section>
-        <section className="bg-impact-pattern flex-shrink-0 flex-grow-0 w-full h-full impact-background mt-20">
-          <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
+        <section className="flex-grow-0 flex-shrink-0 w-full h-full mt-20 bg-impact-pattern impact-background">
+          <div className="flex flex-row items-center justify-between w-10/12 mx-auto">
             <div className="w-7/12 2xl:w-8/12">
               <img
                 src="/images/opensource.png"
@@ -294,7 +309,7 @@ const IndexPage = () => {
               ></img>
             </div>
             <div className="w-5/12 2xl:w-4/12">
-              <h2 className="font-bold text-5xl xl:text-6xl leading-snug mb-4 2xl:w-9/12">
+              <h2 className="mb-4 text-5xl font-bold leading-snug xl:text-6xl 2xl:w-9/12">
                 Free and Open Source Software
               </h2>
               <p className="text-2xl font-landing text-gray-500 2xl:w-10/12 w-[620px]  font-light">
@@ -306,16 +321,16 @@ const IndexPage = () => {
           </div>
         </section>
         <section
-          className="bg-popcorn3-pattern flex-shrink-0 flex-grow-0 w-full h-full mt-20"
+          className="flex-grow-0 flex-shrink-0 w-full h-full mt-20 bg-popcorn3-pattern"
           style={{
             backgroundRepeat: "no-repeat",
             backgroundSize: "auto",
             backgroundPosition: "left top",
           }}
         >
-          <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
+          <div className="flex flex-row items-center justify-between w-10/12 mx-auto">
             <div className="w-5/12">
-              <h2 className="w-11/12 font-bold text-5xl xl:text-6xl leading-snug mb-4">
+              <h2 className="w-11/12 mb-4 text-5xl font-bold leading-snug xl:text-6xl">
                 Education
               </h2>
               <p className="text-2xl font-landing text-gray-500 w-[620px]  font-light">
@@ -325,19 +340,19 @@ const IndexPage = () => {
                 all children and literacy for children and adults.
               </p>
             </div>
-            <div className="w-6/12 relative flex flex-row justify-end">
+            <div className="relative flex flex-row justify-end w-6/12">
               <img src="/images/education.png" alt="tree" className=""></img>
             </div>
           </div>
         </section>
 
-        <section className="bg-impact-pattern flex-shrink-0 flex-grow-0 w-full h-full impact-background relative mt-20 mb-100">
-          <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
-            <div className="w-7/12 2xl:w-8/12 relative flex flex-row justify-start">
+        <section className="relative flex-grow-0 flex-shrink-0 w-full h-full mt-20 bg-impact-pattern impact-background mb-100">
+          <div className="flex flex-row items-center justify-between w-10/12 mx-auto">
+            <div className="relative flex flex-row justify-start w-7/12 2xl:w-8/12">
               <img src="/images/inequality2.png" alt="tree" className="z-10" />
             </div>
             <div className="w-5/12 2xl:w-4/12">
-              <h2 className="font-bold text-5xl xl:text-6xl leading-snug mb-4 2xl:w-9/12">
+              <h2 className="mb-4 text-5xl font-bold leading-snug xl:text-6xl 2xl:w-9/12">
                 Inequality
               </h2>
               <p className="text-2xl font-landing text-gray-500 2xl:w-10/12 z-10 relative w-[620px]  font-light">
@@ -350,7 +365,7 @@ const IndexPage = () => {
               <img
                 src="images/smallTriangle.svg"
                 alt="tree"
-                className="absolute z-0 top-1/4 right-0"
+                className="absolute right-0 z-0 top-1/4"
               />
             </div>
           </div>

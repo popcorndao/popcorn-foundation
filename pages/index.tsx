@@ -1,14 +1,21 @@
 import { Transition } from "@headlessui/react";
+import Burger from "components/Burger";
 import { DesktopFooter } from "components/DesktopFooter";
+import Menu from "components/Menu";
 import { MobileExpandableMenu } from "components/MobileExpandableMenu";
 import { MobileFooter } from "components/MobileFooter";
 import Navbar from "components/NavBar";
 import Link from "next/link";
-import React, { useState } from "react";
-import { Menu } from "react-feather";
+import React, { useRef, useState } from "react";
+import FocusLock from "react-focus-lock";
+import { useOnClickOutside } from "../hooks";
 
 export default function Index(): JSX.Element {
   const [menuVisible, toggleMenu] = useState<boolean>(false);
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+  useOnClickOutside(node, () => setOpen(false));
 
   return (
     <div className="font-landing">
@@ -37,42 +44,50 @@ export default function Index(): JSX.Element {
         >
           <div>
             <header className="w-full bg-white border-b border-gray-300">
-              <nav className="w-10/12 mx-auto pt-4 pb-3  flex flex-row items-center justify-between">
+              <nav className="flex flex-row items-center justify-between p-6 border-b border-primaryLight">
                 <div>
                   <Link href="/" passHref>
                     <a>
                       <img
                         src="/images/logo.png"
                         alt="Logo"
-                        className="h-14 flex-grow-0 flex-shrink-0"
+                        className="flex-grow-0 flex-shrink-0 h-14"
                       ></img>
                     </a>
                   </Link>
                 </div>
-                <Menu onClick={(e) => toggleMenu(true)} />
+                <div ref={node}>
+                  <FocusLock disabled={!open}>
+                    <Burger
+                      open={open}
+                      setOpen={setOpen}
+                      aria-controls={menuId}
+                    />
+                    <Menu open={open} setOpen={setOpen} id={menuId} />
+                  </FocusLock>
+                </div>
               </nav>
             </header>
             <div
-              className="bg-mobile-content bg-cover bg-no-repeat flex-shrink-0 flex-grow-0 w-full
-          h-full mb-44"
+              className="flex-grow-0 flex-shrink-0 w-full h-full bg-no-repeat bg-cover bg-mobile-content mb-44"
             >
               <div className="w-11/12">
                 <img src="images/landing-page-graphic.svg" />
               </div>
               <div className="w-10/12 mx-auto mt-12">
-                <h1 className="text-4xl font-bold text-gray-900 text-center">
+                <h1 className="text-4xl font-bold text-center text-gray-900">
                   Poporn
                 </h1>
-                <h1 className="text-4xl font-bold mt-3 pb-16 text-gray-900 text-center">
+                <h1 className="pb-16 mt-3 text-4xl font-bold text-center text-gray-900">
                   Foundation
                 </h1>
-                <p className="text-md font-extralight text-gray-600 pb-8 text-center">
+                <p className="pb-8 text-center text-gray-600 text-md font-extralight">
                   The Popcorn Foundation is a non-profit foundation committed to
                   advance human liberty, creativity, agency, thought and
                   well-being globally through the development of equitable and
                   humane software.
                 </p>
-                <p className=" text-md font-extralight text-gray-600 text-center">
+                <p className="text-center text-gray-600  text-md font-extralight">
                   Using a decentralized governance model, the Foundation seeks
                   to build a bridge between decentralized financing and social
                   impact, lower barriers, and empower all members of the Defi
@@ -88,25 +103,25 @@ export default function Index(): JSX.Element {
       </div>
 
       {/* DESKTOP + TABLET VERSION */}
-      <div className="hidden lg:flex flex-col w-full h-full">
+      <div className="flex-col hidden w-full h-full lg:flex">
         <header className="w-full bg-primary">
           <Navbar />
         </header>
-        <div className="flex flex-row space-between mb-48 xl:mb-84 2xl:mb-104">
+        <div className="flex flex-row mb-48 space-between xl:mb-84 2xl:mb-104">
           <div className="w-1/12">
             <img src="images/partners-left.svg" />
           </div>
-          <div className="w-10/12 pt-36  flex flex-row mx-auto">
+          <div className="flex flex-row w-10/12 mx-auto pt-36">
             <div className="w-6/12">
               <h1 className="text-6xl font-bold text-gray-900">Popcorn</h1>
-              <h1 className="text-6xl font-bold mt-3 pb-16">Foundation</h1>
-              <p className="text-2xl font-extralight text-gray-600 pb-8">
+              <h1 className="pb-16 mt-3 text-6xl font-bold">Foundation</h1>
+              <p className="pb-8 text-2xl text-gray-600 font-extralight">
                 The Popcorn Foundation is a non-profit foundation committed to
                 advance human liberty, creativity, agency, thought and
                 well-being globally through the development of equitable and
                 humane software.
               </p>
-              <p className=" text-2xl font-extralight text-gray-600">
+              <p className="text-2xl text-gray-600  font-extralight">
                 Using a decentralized governance model, the Foundation seeks to
                 build a bridge between decentralized financing and social
                 impact, lower barriers, and empower all members of the Defi
@@ -119,7 +134,7 @@ export default function Index(): JSX.Element {
               <img src="images/landing-page-graphic.svg" />
             </div>
           </div>
-          <div className="w-1/12 flex justify-end">
+          <div className="flex justify-end w-1/12">
             <img className="mt-100" src="images/partners-right.svg" />
           </div>
         </div>

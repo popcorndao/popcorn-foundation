@@ -1,11 +1,15 @@
 import { Transition } from "@headlessui/react";
+import Burger from "components/Burger";
 import { DesktopFooter } from "components/DesktopFooter";
+import Menu from "components/Menu";
 import { MobileExpandableMenu } from "components/MobileExpandableMenu";
 import { MobileFooter } from "components/MobileFooter";
 import Navbar from "components/NavBar";
 import Link from "next/link";
-import React, { useState } from "react";
-import { ArrowRightCircle, Menu } from "react-feather";
+import React, { useRef, useState } from "react";
+import { ArrowRightCircle } from "react-feather";
+import FocusLock from "react-focus-lock";
+import { useOnClickOutside } from "../hooks";
 
 interface Article {
   image: string;
@@ -81,22 +85,22 @@ const DesktopIdeasCard = ({ article }) => {
     <a
       href={article.url}
       target="_blank"
-      className="drop-shadow-3xl transition duration-500 ease-in-out transform hover:scale-102 cursor-pointer z-10 relative"
+      className="relative z-10 transition duration-500 ease-in-out transform cursor-pointer drop-shadow-3xl hover:scale-102"
     >
       <div className="mb-16">
         <img className="mb-10" src={`images/ideas/${article.image}`} />
 
-        <p className="font-semibold text-xl text-gray-500 mb-2">
+        <p className="mb-2 text-xl font-semibold text-gray-500">
           {article.date}
         </p>
         <p
-          className="text-gray-900 font-semibold line-clamp-2 mb-8"
+          className="mb-8 font-semibold text-gray-900 line-clamp-2"
           style={{ fontSize: "30px" }}
         >
           {article.title}
         </p>
         <p
-          className="text-gray-600 font-light line-clamp-5"
+          className="font-light text-gray-600 line-clamp-5"
           style={{ fontSize: "20px" }}
         >
           {article.content}
@@ -104,7 +108,7 @@ const DesktopIdeasCard = ({ article }) => {
 
         <div className="flex flex-row mt-4 ">
           <p
-            className="text-blue-600 font-light mr-4"
+            className="mr-4 font-light text-blue-600"
             style={{ fontSize: "20px" }}
           >
             Read the full article
@@ -122,25 +126,25 @@ const MobileIdeasCard = ({ article }) => {
     <a
       href={article.url}
       target="_blank"
-      className="relative drop-shadow-3xl transition duration-500 ease-in-out transform hover:scale-102 cursor-pointer z-10"
+      className="relative z-10 transition duration-500 ease-in-out transform cursor-pointer drop-shadow-3xl hover:scale-102"
     >
-      <div className="mb-24 mx-auto" style={{ width: "83vw" }}>
+      <div className="mx-auto mb-24" style={{ width: "83vw" }}>
         <img
-          className="mb-12 object-cover mx-auto"
+          className="object-cover mx-auto mb-12"
           style={{ width: "83vw", height: "69vw", borderRadius: "40px" }}
           src={`images/ideas/${article.image}`}
         />
-        <p className="font-semibold text-xl text-gray-500 mb-2">
+        <p className="mb-2 text-xl font-semibold text-gray-500">
           {article.date}
         </p>
         <p
-          className="text-gray-900 font-semibold line-clamp-2 mb-4"
+          className="mb-4 font-semibold text-gray-900 line-clamp-2"
           style={{ fontSize: "30px" }}
         >
           {article.title}
         </p>
         <p
-          className="text-gray-600 font-light line-clamp-5"
+          className="font-light text-gray-600 line-clamp-5"
           style={{ fontSize: "20px" }}
         >
           {article.content}
@@ -148,7 +152,7 @@ const MobileIdeasCard = ({ article }) => {
 
         <div className="flex flex-row mt-4 ">
           <p
-            className="text-blue-600 font-light mr-4"
+            className="mr-4 font-light text-blue-600"
             style={{ fontSize: "20px" }}
           >
             Read the full article
@@ -163,7 +167,10 @@ const MobileIdeasCard = ({ article }) => {
 
 const IndexPage = () => {
   const [menuVisible, toggleMenu] = useState<boolean>(false);
-
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+  useOnClickOutside(node, () => setOpen(false));
   return (
     <div className="font-landing">
       {/* MOBILE VERSION */}
@@ -191,24 +198,33 @@ const IndexPage = () => {
         >
           <div>
             <header className="w-full bg-white border-b border-gray-300">
-              <nav className="w-10/12 mx-auto pt-4 pb-3  flex flex-row items-center justify-between">
+              <nav className="flex flex-row items-center justify-between p-6 border-b border-primaryLight">
                 <div>
                   <Link href="/" passHref>
                     <a>
                       <img
                         src="/images/logo.png"
                         alt="Logo"
-                        className="h-14 flex-grow-0 flex-shrink-0"
+                        className="flex-grow-0 flex-shrink-0 h-14"
                       ></img>
                     </a>
                   </Link>
                 </div>
-                <Menu onClick={(e) => toggleMenu(true)} />
+                <div ref={node}>
+                  <FocusLock disabled={!open}>
+                    <Burger
+                      open={open}
+                      setOpen={setOpen}
+                      aria-controls={menuId}
+                    />
+                    <Menu open={open} setOpen={setOpen} id={menuId} />
+                  </FocusLock>
+                </div>
               </nav>
             </header>
             <section className="w-10/12 mx-auto mt-12 mb-24">
-              <h2 className="font-bold text-3xl mb-8 text-center">Ideas</h2>
-              <p className="text-lg font-light font-landing text-gray-500 text-center ">
+              <h2 className="mb-8 text-3xl font-bold text-center">Ideas</h2>
+              <p className="text-lg font-light text-center text-gray-500 font-landing ">
                 Read the latest stories and insights from us and those we
                 support.
               </p>
@@ -220,7 +236,7 @@ const IndexPage = () => {
                   src="images/grantmobile/mobilegrantleft.svg"
                 />
                 <img
-                  className="absolute z-0 bottom-1/3 right-0"
+                  className="absolute right-0 z-0 bottom-1/3"
                   src="images/grantmobile/mobilegrantright.svg"
                 />
                 <div className="ml-4 mr-4">
@@ -237,18 +253,18 @@ const IndexPage = () => {
       </div>
 
       {/* DESKTOP + TABLET VERSION */}
-      <div className="hidden md:flex flex-col w-full h-full">
+      <div className="flex-col hidden w-full h-full md:flex">
         <header className="w-full bg-primary">
           <Navbar />
         </header>
 
-        <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-24">
-          <div className="w-10/12 mx-auto pt-20 flex flex-row justify-between items-center">
+        <section className="flex-grow-0 flex-shrink-0 w-full h-full mb-24">
+          <div className="flex flex-row items-center justify-between w-10/12 pt-20 mx-auto">
             <div className="w-6/12">
-              <h2 className="w-11/12 font-bold text-6xl xl:text-7xl leading-snug mb-8">
+              <h2 className="w-11/12 mb-8 text-6xl font-bold leading-snug xl:text-7xl">
                 Ideas
               </h2>
-              <p className="text-2xl font-landing text-gray-500 font-light">
+              <p className="text-2xl font-light text-gray-500 font-landing">
                 Read the latest stories and insights from us and those we
                 support.
               </p>
@@ -256,8 +272,8 @@ const IndexPage = () => {
           </div>
         </section>
 
-        <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-60 xl:mb-84 2xl:mb-100">
-          <div className="w-10/12 mx-auto flex flex-row justify-between items-start">
+        <section className="flex-grow-0 flex-shrink-0 w-full h-full mb-60 xl:mb-84 2xl:mb-100">
+          <div className="flex flex-row items-start justify-between w-10/12 mx-auto">
             <div className="relative mb-36" style={{ width: "47%" }}>
               <a
                 href={Articles[0].url}
@@ -265,28 +281,28 @@ const IndexPage = () => {
                 className="cursor-pointer"
               >
                 <img
-                  className="z-10 w-full absolute drop-shadow-3xl transition duration-500 ease-in-out transform hover:scale-102 cursor-pointer"
+                  className="absolute z-10 w-full transition duration-500 ease-in-out transform cursor-pointer drop-shadow-3xl hover:scale-102"
                   src={`images/ideas/${Articles[0].image}`}
                 />
                 <img
-                  className="z-0 absolute -right-60 top-36"
+                  className="absolute z-0 -right-60 top-36"
                   src={`images/ideas/ideas-bg-1.svg`}
                 />
               </a>
             </div>
 
             <div className="z-10 w-6/12">
-              <p className="font-semibold text-2xl text-gray-500 mb-4">
+              <p className="mb-4 text-2xl font-semibold text-gray-500">
                 {Articles[0].date}
               </p>
               <p
-                className="text-gray-900 font-semibold line-clamp-2 mb-8"
+                className="mb-8 font-semibold text-gray-900 line-clamp-2"
                 style={{ fontSize: "48px" }}
               >
                 {Articles[0].title}
               </p>
               <p
-                className="text-gray-600 font-light line-clamp-5"
+                className="font-light text-gray-600 line-clamp-5"
                 style={{ fontSize: "24px" }}
               >
                 {Articles[0].content}
@@ -299,7 +315,7 @@ const IndexPage = () => {
                   className="cursor-pointer"
                 >
                   <p
-                    className="text-blue-600 font-light mr-4"
+                    className="mr-4 font-light text-blue-600"
                     style={{ fontSize: "24px" }}
                   >
                     Read the full article
@@ -310,21 +326,21 @@ const IndexPage = () => {
                   target="_blank"
                   className="cursor-pointer"
                 >
-                  <ArrowRightCircle className=" mt-1 text-blue-600" />
+                  <ArrowRightCircle className="mt-1 text-blue-600 " />
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-48 relative">
+        <section className="relative flex-grow-0 flex-shrink-0 w-full h-full mb-48">
           <p
-            className="w-10/12 text-gray-900 font-semibold line-clamp-2 mx-auto mb-24"
+            className="w-10/12 mx-auto mb-24 font-semibold text-gray-900 line-clamp-2"
             style={{ fontSize: "48px" }}
           >
             Latest Update
           </p>
-          <div className="z-10 w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16">
+          <div className="z-10 grid w-10/12 gap-16 mx-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {Articles.slice(1).map((article) => (
               <DesktopIdeasCard article={article} />
             ))}
@@ -332,7 +348,7 @@ const IndexPage = () => {
           <img
             src="images/smallTriangle.svg"
             alt="tree"
-            className="absolute z-0 -bottom-84 right-0"
+            className="absolute right-0 z-0 -bottom-84"
           />
           <img
             src="images/ideas/ideas-bg-low-left.svg"

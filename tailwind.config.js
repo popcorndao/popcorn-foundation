@@ -7,6 +7,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      mobile: "576px",
+      // => @media (min-width: 576px) { ... }
+
       sm: "640px",
       // => @media (min-width: 640px) { ... }
 
@@ -60,6 +63,10 @@ module.exports = {
 
         ctaYellow: "#F6CB22",
         ctaYellowLight: "#FFD324",
+
+        primaryDark: "#0D0C1D",
+        primaryLight: "#EFFFFA",
+        primaryHover: "#343078",
       },
       backgroundImage: (theme) => ({
         footer: "url('/images/footer-bg.svg')",
