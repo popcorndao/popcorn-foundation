@@ -43,14 +43,14 @@ const IndexPage = () => {
         >
           <div>
             <header className="w-full bg-white border-b border-gray-300">
-              <nav className="flex flex-row items-center justify-between w-10/12 pt-4 pb-3 mx-auto">
+              <nav className="flex flex-row items-center justify-between p-6 border-b border-primaryLight">
                 <div>
                   <Link href="/" passHref>
                     <a>
                       <img
-                        src="/images/logo.png"
+                        src="/images/logo3.svg"
                         alt="Logo"
-                        className="flex-grow-0 flex-shrink-0 h-14"
+                        className="flex-grow-0 flex-shrink-0 w-12 h-12"
                       ></img>
                     </a>
                   </Link>

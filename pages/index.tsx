@@ -49,9 +49,9 @@ export default function Index(): JSX.Element {
                   <Link href="/" passHref>
                     <a>
                       <img
-                        src="/images/logo.png"
+                        src="/images/logo3.svg"
                         alt="Logo"
-                        className="flex-grow-0 flex-shrink-0 h-14"
+                        className="flex-grow-0 flex-shrink-0 w-12 h-12"
                       ></img>
                     </a>
                   </Link>
@@ -68,9 +68,7 @@ export default function Index(): JSX.Element {
                 </div>
               </nav>
             </header>
-            <div
-              className="flex-grow-0 flex-shrink-0 w-full h-full bg-no-repeat bg-cover bg-mobile-content mb-44"
-            >
+            <div className="flex-grow-0 flex-shrink-0 w-full h-full bg-no-repeat bg-cover bg-mobile-content mb-44">
               <div className="w-11/12">
                 <img src="images/landing-page-graphic.svg" />
               </div>
@@ -87,7 +85,7 @@ export default function Index(): JSX.Element {
                   well-being globally through the development of equitable and
                   humane software.
                 </p>
-                <p className="text-center text-gray-600  text-md font-extralight">
+                <p className="text-center text-gray-600 text-md font-extralight">
                   Using a decentralized governance model, the Foundation seeks
                   to build a bridge between decentralized financing and social
                   impact, lower barriers, and empower all members of the Defi
@@ -121,7 +119,7 @@ export default function Index(): JSX.Element {
                 well-being globally through the development of equitable and
                 humane software.
               </p>
-              <p className="text-2xl text-gray-600  font-extralight">
+              <p className="text-2xl text-gray-600 font-extralight">
                 Using a decentralized governance model, the Foundation seeks to
                 build a bridge between decentralized financing and social
                 impact, lower barriers, and empower all members of the Defi

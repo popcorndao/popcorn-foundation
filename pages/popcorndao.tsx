@@ -49,9 +49,9 @@ export default function Index(): JSX.Element {
                   <Link href="/" passHref>
                     <a>
                       <img
-                        src="/images/logo.png"
+                        src="/images/logo3.svg"
                         alt="Logo"
-                        className="flex-grow-0 flex-shrink-0 h-14"
+                        className="flex-grow-0 flex-shrink-0 w-12 h-12"
                       ></img>
                     </a>
                   </Link>
