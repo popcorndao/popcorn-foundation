@@ -61,7 +61,7 @@ export default function Index(): JSX.Element {
               </div>
               <div className="w-10/12 mx-auto mt-12">
                 <h1 className="text-4xl font-bold text-gray-900 text-center">
-                  Poporn
+                  Popcorn
                 </h1>
                 <h1 className="text-4xl font-bold mt-3 pb-16 text-gray-900 text-center">
                   Foundation
