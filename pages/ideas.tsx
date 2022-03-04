@@ -190,15 +190,15 @@ const IndexPage = () => {
           leaveTo="opacity-0"
         >
           <div>
-            <header className="w-full bg-white border-b border-gray-300">
-              <nav className="w-10/12 mx-auto pt-4 pb-3  flex flex-row items-center justify-between">
+          <header className="w-full px-8 py-6 bg-white border-b border-gray-300">
+              <nav className="flex flex-row items-center justify-between">
                 <div>
                   <Link href="/" passHref>
                     <a>
                       <img
-                        src="/images/logo.png"
+                        src="/images/popLogo.png"
                         alt="Logo"
-                        className="h-14 flex-grow-0 flex-shrink-0"
+                        className="w-8 h-8 flex-grow-0 flex-shrink-0"
                       ></img>
                     </a>
                   </Link>

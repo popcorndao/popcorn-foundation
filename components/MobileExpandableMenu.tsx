@@ -20,7 +20,7 @@ export const MobileExpandableMenu: React.FC<MobileExpandableMenuProps> = ({
         <div className="grid justify-items-stretch">
             <XIcon
               onClick={() => toggleMenuVisible(false)}
-              className="mt-8 mb-2 text-white justify-self-end"
+              className="mt-7 mr-2 text-white justify-self-end"
               style={{ width: 24, height: 24 }}
             />
           </div>
