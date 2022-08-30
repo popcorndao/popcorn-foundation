@@ -1,10 +1,4 @@
-import { Transition } from "@headlessui/react";
-import { DesktopFooter } from "components/DesktopFooter";
-import { MobileExpandableMenu } from "components/MobileExpandableMenu";
-import { MobileFooter } from "components/MobileFooter";
-import Navbar from "components/NavBar";
-import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { ArrowRightCircle, Menu } from "react-feather";
 
 interface Article {
@@ -162,188 +156,107 @@ const MobileIdeasCard = ({ article }) => {
 };
 
 const IndexPage = () => {
-  const [menuVisible, toggleMenu] = useState<boolean>(false);
-
   return (
-    <div className="font-landing">
-      {/* MOBILE VERSION */}
-      <div className="w-full h-full md:hidden">
-        <Transition
-          show={menuVisible}
-          enter="transition-opacity duration-150"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="transition-opacity duration-150"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <MobileExpandableMenu toggleMenuVisible={toggleMenu} />
-        </Transition>
-
-        <Transition
-          show={!menuVisible}
-          enter="transition-opacity duration-150"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="transition-opacity duration-150"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div>
-          <header className="w-full px-8 py-6 bg-white border-b border-gray-300">
-              <nav className="flex flex-row items-center justify-between">
-                <div>
-                  <Link href="/" passHref>
-                    <a>
-                      <img
-                        src="/images/popLogo.png"
-                        alt="Logo"
-                        className="w-8 h-8 flex-grow-0 flex-shrink-0"
-                      ></img>
-                    </a>
-                  </Link>
-                </div>
-                <Menu onClick={(e) => toggleMenu(true)} />
-              </nav>
-            </header>
-            <section className="w-10/12 mx-auto mt-12 mb-24">
-              <h2 className="font-bold text-3xl mb-8 text-center">Ideas</h2>
-              <p className="text-lg font-light font-landing text-gray-500 text-center ">
-                Read the latest stories and insights from us and those we
-                support.
-              </p>
-            </section>
-            <section className="mb-40">
-              <div className="relative">
-                <img
-                  className="absolute z-0 top-80"
-                  src="images/grantmobile/mobilegrantleft.svg"
-                />
-                <img
-                  className="absolute z-0 bottom-1/3 right-0"
-                  src="images/grantmobile/mobilegrantright.svg"
-                />
-                <div className="ml-4 mr-4">
-                  {Articles.map((article) => (
-                    <MobileIdeasCard article={article} />
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            <MobileFooter />
+    <>
+      <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-24">
+        <div className="w-10/12 mx-auto pt-20 flex flex-row justify-between items-center">
+          <div className="w-6/12">
+            <h2 className="w-11/12 font-bold text-6xl xl:text-7xl leading-snug mb-8">
+              Ideas
+            </h2>
+            <p className="text-2xl font-landing text-gray-500 font-light">
+              Read the latest stories and insights from us and those we
+              support.
+            </p>
           </div>
-        </Transition>
-      </div>
+        </div>
+      </section>
 
-      {/* DESKTOP + TABLET VERSION */}
-      <div className="hidden md:flex flex-col w-full h-full">
-        <header className="w-full bg-primary">
-          <Navbar />
-        </header>
-
-        <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-24">
-          <div className="w-10/12 mx-auto pt-20 flex flex-row justify-between items-center">
-            <div className="w-6/12">
-              <h2 className="w-11/12 font-bold text-6xl xl:text-7xl leading-snug mb-8">
-                Ideas
-              </h2>
-              <p className="text-2xl font-landing text-gray-500 font-light">
-                Read the latest stories and insights from us and those we
-                support.
-              </p>
-            </div>
+      <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-60 xl:mb-84 2xl:mb-100">
+        <div className="w-10/12 mx-auto flex flex-row justify-between items-start">
+          <div className="relative mb-36" style={{ width: "47%" }}>
+            <a
+              href={Articles[0].url}
+              target="_blank"
+              className="cursor-pointer"
+            >
+              <img
+                className="z-10 w-full absolute drop-shadow-3xl transition duration-500 ease-in-out transform hover:scale-102 cursor-pointer"
+                src={`images/ideas/${Articles[0].image}`}
+              />
+              <img
+                className="z-0 absolute -right-60 top-36"
+                src={`images/ideas/ideas-bg-1.svg`}
+              />
+            </a>
           </div>
-        </section>
 
-        <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-60 xl:mb-84 2xl:mb-100">
-          <div className="w-10/12 mx-auto flex flex-row justify-between items-start">
-            <div className="relative mb-36" style={{ width: "47%" }}>
+          <div className="z-10 w-6/12">
+            <p className="font-semibold text-2xl text-gray-500 mb-4">
+              {Articles[0].date}
+            </p>
+            <p
+              className="text-gray-900 font-semibold line-clamp-2 mb-8"
+              style={{ fontSize: "48px" }}
+            >
+              {Articles[0].title}
+            </p>
+            <p
+              className="text-gray-600 font-light line-clamp-5"
+              style={{ fontSize: "24px" }}
+            >
+              {Articles[0].content}
+            </p>
+
+            <div className="flex flex-row mt-4 ">
               <a
                 href={Articles[0].url}
                 target="_blank"
                 className="cursor-pointer"
               >
-                <img
-                  className="z-10 w-full absolute drop-shadow-3xl transition duration-500 ease-in-out transform hover:scale-102 cursor-pointer"
-                  src={`images/ideas/${Articles[0].image}`}
-                />
-                <img
-                  className="z-0 absolute -right-60 top-36"
-                  src={`images/ideas/ideas-bg-1.svg`}
-                />
+                <p
+                  className="text-blue-600 font-light mr-4"
+                  style={{ fontSize: "24px" }}
+                >
+                  Read the full article
+                </p>
+              </a>
+              <a
+                href={Articles[0].url}
+                target="_blank"
+                className="cursor-pointer"
+              >
+                <ArrowRightCircle className=" mt-1 text-blue-600" />
               </a>
             </div>
-
-            <div className="z-10 w-6/12">
-              <p className="font-semibold text-2xl text-gray-500 mb-4">
-                {Articles[0].date}
-              </p>
-              <p
-                className="text-gray-900 font-semibold line-clamp-2 mb-8"
-                style={{ fontSize: "48px" }}
-              >
-                {Articles[0].title}
-              </p>
-              <p
-                className="text-gray-600 font-light line-clamp-5"
-                style={{ fontSize: "24px" }}
-              >
-                {Articles[0].content}
-              </p>
-
-              <div className="flex flex-row mt-4 ">
-                <a
-                  href={Articles[0].url}
-                  target="_blank"
-                  className="cursor-pointer"
-                >
-                  <p
-                    className="text-blue-600 font-light mr-4"
-                    style={{ fontSize: "24px" }}
-                  >
-                    Read the full article
-                  </p>
-                </a>
-                <a
-                  href={Articles[0].url}
-                  target="_blank"
-                  className="cursor-pointer"
-                >
-                  <ArrowRightCircle className=" mt-1 text-blue-600" />
-                </a>
-              </div>
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-48 relative">
-          <p
-            className="w-10/12 text-gray-900 font-semibold line-clamp-2 mx-auto mb-24"
-            style={{ fontSize: "48px" }}
-          >
-            Latest Update
-          </p>
-          <div className="z-10 w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16">
-            {Articles.slice(1).map((article) => (
-              <DesktopIdeasCard article={article} />
-            ))}
-          </div>
-          <img
-            src="images/smallTriangle.svg"
-            alt="tree"
-            className="absolute z-0 -bottom-84 right-0"
-          />
-          <img
-            src="images/ideas/ideas-bg-low-left.svg"
-            alt="tree"
-            className="absolute z-0 -bottom-0 left-5"
-          />
-        </section>
-
-        <DesktopFooter />
-      </div>
-    </div>
+      <section className="flex-shrink-0 flex-grow-0 w-full h-full mb-48 relative">
+        <p
+          className="w-10/12 text-gray-900 font-semibold line-clamp-2 mx-auto mb-24"
+          style={{ fontSize: "48px" }}
+        >
+          Latest Update
+        </p>
+        <div className="z-10 w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16">
+          {Articles.slice(1).map((article) => (
+            <DesktopIdeasCard article={article} />
+          ))}
+        </div>
+        <img
+          src="images/smallTriangle.svg"
+          alt="tree"
+          className="absolute z-0 -bottom-84 right-0"
+        />
+        <img
+          src="images/ideas/ideas-bg-low-left.svg"
+          alt="tree"
+          className="absolute z-0 -bottom-0 left-5"
+        />
+      </section>
+    </>
   );
 };
 
