@@ -67,6 +67,7 @@ module.exports = {
 				customGreen: '#05BE64',
 				customLightGreen: '#78E69B',
 				customPurple: '#9B55FF',
+				customLightPurple: '#C391FF',
 				customDarkGray: '#1F2937',
 				customLightGray: '#D7D7D7',
 				rewardsGreen: '#1FBC67',
@@ -75,6 +76,7 @@ module.exports = {
 
         ctaYellow: "#F6CB22",
         ctaYellowLight: "#FFD324",
+        pink: "#FFA0B4"
       },
       fontSize: {
 				'xs': '.75rem',
