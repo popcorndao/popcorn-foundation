@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Index(): JSX.Element {
   return (
-    <div className="flex flex-col lg:flex-row mx-auto justify-between">
-      <div className="w-full lg:w-[30%]">
+    <div className="grid grid-cols-12">
+      <div className="col-span-12 md:col-span-4">
         <h1 className="text-6xl text-black leading-[100%] font-normal mb-4">
           Popcorn <br />
           Foundation
@@ -23,7 +23,8 @@ export default function Index(): JSX.Element {
           the public goods.
         </p>
       </div>
-      <div className="w-full lg:w-6/12 mt-10 lg:mt-0 2lg:w-4/12">
+
+      <div className="col-span-12 md:col-span-6 md:col-end-13 mt-12 md:mt-0">
         <div className="rounded-lg p-6 md:px-8 md:py-9 bg-customYellow h-full flex flex-row md:flex-col justify-between">
           <p className="hidden lg:block text-6xl text-black font-normal leading-[100%]">
             Yield <br />
@@ -37,7 +38,7 @@ export default function Index(): JSX.Element {
             Do good <br />
           </p>
           <div className="flex flex-col md:flex-row justify-end">
-            <img src="/images/smiley.svg" alt="" />
+            <img src="/images/smiley.svg" alt="" height="60" width="60" />
           </div>
         </div>
       </div>

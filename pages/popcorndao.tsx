@@ -1,38 +1,38 @@
 import React from "react";
 
-export default function Index(): JSX.Element {
+export default function PopcornDao(): JSX.Element {
   return (
-    <section className="w-10/12 mx-auto flex flex-row mb-20">
-      <div className="w-6/12" style={{ marginTop: 146 }}>
-        <p
-          className="text-gray-900 font-landing font-bold mb-10"
-          style={{ fontSize: 72 }}
-        >
+    <div className="grid grid-cols-12">
+      <div className="col-span-12 md:col-span-3">
+        <h1 className="text-6xl text-black leading-[100%] font-normal mb-4">
           PopcornDAO
+        </h1>
+        <p className="text-base font-normal text-primaryDark pb-8">
+          PopcornDAO is a decentralized autonomous
+          organization of members holding
+          Popcorn governance tokens (POP). Popcorn
+          holders use their stake to vote on proposals
+          that influence the parameters of
+          Popcorn smart contracts. These members
+          share the common goal and responsibility
+          of fueling the future growth of the protocol,
+          decentralizing the organization, and nurturing
+          the mission of driving social impact for
+          the public benefit in perpetuity.
         </p>
-        <p className="text-2xl font-light">
-          PopcornDAO is a decentralized autonomous organization of members
-          holding Popcorn governance tokens (POP). Popcorn holders use their
-          stake to vote on proposals that influence the parameters of
-          Popcorn smart contracts. These members share the common goal and
-          responsibility of fueling the future growth of the protocol,
-          decentralizing the organization, and nurturing the mission of
-          driving social impact for the public benefit in perpetuity.
-        </p>
-        <a href="https://popcorn.network/" className=" cursor-pointer">
-          <button
-            type="button"
-            className="border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mb-44 xl:mb-12"
-            style={{ width: 240, height: 64, marginTop: 32 }}
-          >
-            Get Involved
-          </button>
-        </a>
       </div>
-      <div className="w-1/12"></div>
-      <div className="w-5/12" style={{ marginTop: 146 }}>
-        <img className="py-5 px-5" src="images/rocket.svg" />
+      <div className="col-span-12 md:col-span-6 md:col-end-13 mt-12 md:mt-0">
+        <div className="rounded-lg p-6 md:px-8 md:py-9 bg-pink h-full flex flex-col justify-between">
+          <p className="text-3xl lg:text-6xl text-black font-normal leading-[100%]">
+            Enjoy noble yield <br />
+            while creating <br />
+            real world impact <br />
+          </p>
+          <div className="flex flex-col items-end md:flex-row md:justify-end mt-8 md:mt-[108px]">
+            <img src="/images/smiley.svg" alt="" height="60" width="60" />
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
