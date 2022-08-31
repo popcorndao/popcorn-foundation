@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 const Layout = (props: { children: React.ReactNode }) => {
   return (
-    <div className="font-khTeka px-6 lg:px-8 mx-auto">
+    <div className="font-khTeka px-6 lg:px-8 mx-auto 2xl:w-[90%]">
       <div className="flex-col w-full h-full">
         <header className="w-full h-[112px]">
           <Navbar />
