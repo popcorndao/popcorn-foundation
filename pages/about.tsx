@@ -1,5 +1,34 @@
-import AboutMobileSlider from "components/Slider/AboutMobileSlider";
+import MobileSlider from "components/Slider/MobileSlider";
 import React from "react";
+
+
+const items = [
+  {
+    title: "Diversity & Inclusion",
+    description: "This is DeFi for the People. We believe in breaking down social and cultural barriers by creating a welcoming community to anyone who is interested in creating positive social impact through DeFi.",
+    image: "/images/about/diversity.svg",
+  },
+  {
+    title: "Accessibility",
+    description: "Our products, our community, our communications, and our goals are friendly, transparent, relatable, easy to understand, and easy to use.",
+    image: "/images/about/accessibility.svg",
+  },
+  {
+    title: "Community",
+    description: "We look to foster empathy, collaboration, interconnection, and a non-rivalrous approach in all spheres, and intend to influence global systems as such. We understand that we benefit when everyone benefits.",
+    image: "/images/about/community.svg",
+  },
+  {
+    title: "Agency",
+    description: "We believe that DeFi is a new financial system that gives individuals and communities the tools to embed individual and community agency.",
+    image: "/images/about/agency.svg",
+  },
+  {
+    title: "Leadership",
+    description: "We believe that DeFi is a new financial system that gives individuals and communities the tools to embed individual and community agency.",
+    image: "/images/about/leadership.svg",
+  }
+];
 
 export default function About(): JSX.Element {
   return (
@@ -85,7 +114,7 @@ export default function About(): JSX.Element {
       </div>
 
       <div className="md:hidden">
-        <AboutMobileSlider isThreeX />
+        <MobileSlider items={items} />
       </div>
     </section>
   );

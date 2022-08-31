@@ -1,151 +1,127 @@
+import MobileSlider from "components/Slider/MobileSlider";
 import React from "react";
 
-const IndexPage = () => {
+const items = [
+  {
+    title: "Environment",
+    description: "We are committed to supporting activities that strengthen the conservation and protection of natural resources, advance ecological sustainability, and foster harmony between communities and the environment. We empower communities to access grants and other resources, embrace local solutions, and spur innovation in an effort to address the causes and reduce the effects of climate change and environmental degradation.",
+    image: "/images/grants/environment.svg",
+  },
+  {
+    title: "Free and Open Source Software",
+    description: `We support the development of free and open source software that promotes 
+    fair and equitable access, creating opportunity in underserved and global communities alike.`,
+    image: "/images/grants/open-source-software.svg",
+  },
+  {
+    title: "Education",
+    description: `Our goal is to strengthen the capacity of communities to support basic education and literacy, reduce gender 
+    disparity in education, and increase adult literacy. We support education for all children and literacy for children and adults.`,
+    image: "/images/grants/education.svg",
+  },
+  {
+    title: "Inequality",
+    description: `Our goal is to help reduce inequality and enable a life lived in dignity and with equal rights for all. To reduce inequality, 
+    it is vital to overcome discrimination, shift mindsets toward a fairer distribution of resources, 
+    and ensure that everyone can participate in society, politics, and the economy.`,
+    image: "/images/grants/inequality.svg",
+  }
+];
+
+export default function Grant(): JSX.Element {
   return (
-    <>
-      <section
-        className="bg-popcorn1-pattern flex-shrink-0 flex-grow-0 w-full h-full xl:mb-24"
-        style={{
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "auto",
-          backgroundPosition: "left top",
-        }}
-      >
-        <div className="w-10/12 mx-auto pt-20 flex flex-row justify-between items-center">
-          <div className="w-6/12">
-            <h2 className="w-11/12 font-bold text-6xl xl:text-7xl leading-snug mb-8">
-              Get Grant
-            </h2>
-            <p className="text-2xl font-landing text-gray-500 font-light">
-              Potential beneficiaries of the Popcorn Foundation must be
-              nominated by the Popcorn Foundation or by POP token holders
-              through a multi-step beneficiary nomination process.
-              <br />
-              <br />
-              The Foundation’s granting activity is focused but not limited to
-              the following areas: environmental, educational, inequality, and
-              open-source initiatives. Once beneficiaries are accepted, they
-              can then apply for a grant. Grants are delivered in three
-              fixed-term durations: 1 month, 3 months, and 12 months.
-              <br />
-              <br />
-              Contact us for more information on beneficiary criteria and the
-              nomination process:{" "}
-              <a
-                className="text-blue-600 hover:text-blue-800 hover:underline visited:text-purple-600"
-                href="mailto:grant@popcorn.foundation"
-              >
-                grant@popcorn.foundation
-              </a>
-            </p>
+    <section>
+      <div className="grid grid-cols-12 mb-10 md:mb-20">
+        <div className="col-span-12">
+          <div className="rounded-lg p-6 md:px-8 md:py-9 bg-customYellow h-full flex flex-col justify-between relative">
+            <div>
+              <h1 className="text-3xl lg:text-6xl text-black font-normal leading-[100%] pt-16 lg:pt-0">
+                Get<br />
+                Grant
+              </h1>
+              <p className="mt-6 w-full lg:w-[30%] text-primaryDark text-base">
+                Potential beneficiaries of the Popcorn Foundation must be nominated by the Popcorn Foundation or by 
+                POP token holders through a multi-step beneficiary nomination process. The Foundation’s granting activity is 
+                focused but not limited to the following areas:  environmental, educational, inequality, 
+                and open-source initiatives. Once beneficiaries are accepted, they can then apply for a grant.
+                Grants are delivered in three fixed-term durations: 1 month, 3 months, and 12 months. 
+                Contact us for more information on beneficiary criteria and the nomination process: grant@popcorn.foundation
+              </p>
+            </div>
+            <div className="absolute left-[70%] -top-2 lg:-top-5">
+              <img src="/images/charity.svg" alt="charity icon" className="w-12 h-12 lg:w-[140px] lg:h-[140px]" />
+            </div>
+            <div className="absolute left-[80%] top-10 lg:top-[100px]">
+              <img src="/images/earth.svg" alt="earth icon" className="rotate-90 md:rotate-0 w-10 h-10 lg:w-[145px] lg:h-[145px]" />
+            </div>
+            <div className="flex flex-col items-end md:flex-row md:justify-end mt-10 md:mt-0">
+              <img src="/images/thumbs.svg" alt="smiley" height="60" width="60" className="rotate-90 md:rotate-0" />
+            </div>
           </div>
         </div>
-      </section>
-      <section
-        className="bg-popcorn3-pattern flex-shrink-0 flex-grow-0 w-full h-full mt-24"
-        style={{
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "auto",
-          backgroundPosition: "left top",
-        }}
-      >
-        <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
-          <div className="w-5/12">
-            <h2 className="w-11/12 font-bold text-5xl xl:text-6xl leading-snug mb-4">
-              Environment
-            </h2>
-            <p className="text-2xl font-landing text-gray-500 w-[620px] font-light">
-              We are committed to supporting activities that strengthen the
-              conservation and protection of natural resources, advance
-              ecological sustainability, and foster harmony between
-              communities and the environment. We empower communities to
-              access grants and other resources, embrace local solutions, and
-              spur innovation in an effort to address the causes and reduce
-              the effects of climate change and environmental degradation.
-            </p>
-          </div>
-          <div className="w-6/12 relative flex flex-row justify-end">
-            <img
-              src="/images/enivronment2.png"
-              alt="tree"
-              className="z-10"
-            ></img>
-          </div>
-        </div>
-      </section>
-      <section className="bg-impact-pattern flex-shrink-0 flex-grow-0 w-full h-full impact-background mt-20">
-        <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
-          <div className="w-7/12 2xl:w-8/12">
-            <img
-              src="/images/opensource.png"
-              alt="tree"
-              className="z-10"
-            ></img>
-          </div>
-          <div className="w-5/12 2xl:w-4/12">
-            <h2 className="font-bold text-5xl xl:text-6xl leading-snug mb-4 2xl:w-9/12">
-              Free and Open Source Software
-            </h2>
-            <p className="text-2xl font-landing text-gray-500 2xl:w-10/12 w-[620px]  font-light">
-              We support the development of free and open source software that
-              promotes fair and equitable access, creating opportunity in
-              underserved and global communities alike.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section
-        className="bg-popcorn3-pattern flex-shrink-0 flex-grow-0 w-full h-full mt-20"
-        style={{
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "auto",
-          backgroundPosition: "left top",
-        }}
-      >
-        <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
-          <div className="w-5/12">
-            <h2 className="w-11/12 font-bold text-5xl xl:text-6xl leading-snug mb-4">
-              Education
-            </h2>
-            <p className="text-2xl font-landing text-gray-500 w-[620px]  font-light">
-              Our goal is to strengthen the capacity of communities to support
-              basic education and literacy, reduce gender disparity in
-              education, and increase adult literacy. We support education for
-              all children and literacy for children and adults.
-            </p>
-          </div>
-          <div className="w-6/12 relative flex flex-row justify-end">
-            <img src="/images/education.png" alt="tree" className=""></img>
-          </div>
-        </div>
-      </section>
+      </div>
 
-      <section className="bg-impact-pattern flex-shrink-0 flex-grow-0 w-full h-full impact-background relative mt-20 mb-100">
-        <div className="w-10/12 mx-auto flex flex-row justify-between items-center">
-          <div className="w-7/12 2xl:w-8/12 relative flex flex-row justify-start">
-            <img src="/images/inequality2.png" alt="tree" className="z-10" />
-          </div>
-          <div className="w-5/12 2xl:w-4/12">
-            <h2 className="font-bold text-5xl xl:text-6xl leading-snug mb-4 2xl:w-9/12">
-              Inequality
-            </h2>
-            <p className="text-2xl font-landing text-gray-500 2xl:w-10/12 z-10 relative w-[620px]  font-light">
-              Our goal is to help reduce inequality and enable a life lived in
-              dignity and with equal rights for all. To reduce inequality, it
-              is vital to overcome discrimination, shift mindsets toward a
-              fairer distribution of resources, and ensure that everyone can
-              participate in society, politics, and the economy.
-            </p>
-            <img
-              src="images/smallTriangle.svg"
-              alt="tree"
-              className="absolute z-0 top-1/4 right-0"
-            />
-          </div>
+      <div className="grid-cols-12 gap-20 hidden md:grid">
+        {/* environment */}
+        <div className="col-span-6">
+          <img src="/images/grants/environment.svg" alt="environment" className="object-cover w-full" />
         </div>
-      </section>
-    </>
+        <div className="col-span-6">
+          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">Environment</h1>
+          <p className="text-primaryDark leading-[150%]">
+            We are committed to supporting activities that strengthen the conservation and protection of natural resources, 
+            advance ecological sustainability, and foster harmony between communities and the environment. We empower 
+            communities to access grants and other resources, embrace local solutions, and spur innovation in an effort to 
+            address the causes and reduce the effects of climate change and environmental degradation.
+          </p>
+        </div>
+        
+
+        {/* free and open source software */}
+        <div className="col-span-6">
+          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">
+            Free and Open  <br />
+            Source Software
+          </h1>
+          <p className="text-primaryDark leading-[150%]">
+            We support the development of free and open source software that promotes 
+            fair and equitable access, creating opportunity in underserved and global communities alike.
+          </p>
+        </div>
+        <div className="col-span-6">
+          <img src="/images/grants/open-source-software.svg" alt="open source software" className="object-cover w-full" />
+        </div>
+        
+
+        {/* education */}
+        <div className="col-span-6">
+          <img src="/images/grants/education.svg" alt="education" className="object-cover w-full" />
+        </div>
+        <div className="col-span-6">
+          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">Education</h1>
+          <p className="text-primaryDark leading-[150%]">
+            Our goal is to strengthen the capacity of communities to support basic education and literacy, reduce gender 
+            disparity in education, and increase adult literacy. We support education for all children and literacy for children and adults.
+          </p>
+        </div>
+
+        {/* inequality */}
+        <div className="col-span-6">
+          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">Inequality</h1>
+          <p className="text-primaryDark leading-[150%]">
+            Our goal is to help reduce inequality and enable a life lived in dignity and with equal rights for all. To reduce inequality, 
+            it is vital to overcome discrimination, shift mindsets toward a fairer distribution of resources, 
+            and ensure that everyone can participate in society, politics, and the economy.
+          </p>
+        </div>
+        <div className="col-span-6">
+          <img src="/images/grants/inequality.svg" alt="Agency" className="object-cover w-full" />
+        </div>
+      </div>
+
+      <div className="md:hidden">
+        <MobileSlider items={items} />
+      </div>
+    </section>
   );
-};
-
-export default IndexPage;
+}
