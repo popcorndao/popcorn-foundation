@@ -1,4 +1,5 @@
 import MobileSlider from "components/Slider/MobileSlider";
+import { isOdd } from "helpers";
 import React from "react";
 
 const items = [
@@ -8,7 +9,8 @@ const items = [
     image: "/images/grants/environment.svg",
   },
   {
-    title: "Free and Open Source Software",
+    title: `Free and Open
+    Source Software`,
     description: `We support the development of free and open source software that promotes 
     fair and equitable access, creating opportunity in underserved and global communities alike.`,
     image: "/images/grants/open-source-software.svg",
@@ -40,11 +42,11 @@ export default function Grant(): JSX.Element {
                 Grant
               </h1>
               <p className="mt-6 w-full lg:w-[30%] text-primaryDark text-base">
-                Potential beneficiaries of the Popcorn Foundation must be nominated by the Popcorn Foundation or by 
-                POP token holders through a multi-step beneficiary nomination process. The Foundation’s granting activity is 
-                focused but not limited to the following areas:  environmental, educational, inequality, 
+                Potential beneficiaries of the Popcorn Foundation must be nominated by the Popcorn Foundation or by
+                POP token holders through a multi-step beneficiary nomination process. The Foundation’s granting activity is
+                focused but not limited to the following areas:  environmental, educational, inequality,
                 and open-source initiatives. Once beneficiaries are accepted, they can then apply for a grant.
-                Grants are delivered in three fixed-term durations: 1 month, 3 months, and 12 months. 
+                Grants are delivered in three fixed-term durations: 1 month, 3 months, and 12 months.
                 Contact us for more information on beneficiary criteria and the nomination process: grant@popcorn.foundation
               </p>
             </div>
@@ -61,67 +63,25 @@ export default function Grant(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid-cols-12 gap-20 hidden md:grid">
-        {/* environment */}
-        <div className="col-span-6">
-          <img src="/images/grants/environment.svg" alt="environment" className="object-cover w-full" />
-        </div>
-        <div className="col-span-6">
-          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">Environment</h1>
-          <p className="text-primaryDark leading-[150%]">
-            We are committed to supporting activities that strengthen the conservation and protection of natural resources, 
-            advance ecological sustainability, and foster harmony between communities and the environment. We empower 
-            communities to access grants and other resources, embrace local solutions, and spur innovation in an effort to 
-            address the causes and reduce the effects of climate change and environmental degradation.
-          </p>
-        </div>
-        
-
-        {/* free and open source software */}
-        <div className="col-span-6">
-          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">
-            Free and Open  <br />
-            Source Software
-          </h1>
-          <p className="text-primaryDark leading-[150%]">
-            We support the development of free and open source software that promotes 
-            fair and equitable access, creating opportunity in underserved and global communities alike.
-          </p>
-        </div>
-        <div className="col-span-6">
-          <img src="/images/grants/open-source-software.svg" alt="open source software" className="object-cover w-full" />
-        </div>
-        
-
-        {/* education */}
-        <div className="col-span-6">
-          <img src="/images/grants/education.svg" alt="education" className="object-cover w-full" />
-        </div>
-        <div className="col-span-6">
-          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">Education</h1>
-          <p className="text-primaryDark leading-[150%]">
-            Our goal is to strengthen the capacity of communities to support basic education and literacy, reduce gender 
-            disparity in education, and increase adult literacy. We support education for all children and literacy for children and adults.
-          </p>
-        </div>
-
-        {/* inequality */}
-        <div className="col-span-6">
-          <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4">Inequality</h1>
-          <p className="text-primaryDark leading-[150%]">
-            Our goal is to help reduce inequality and enable a life lived in dignity and with equal rights for all. To reduce inequality, 
-            it is vital to overcome discrimination, shift mindsets toward a fairer distribution of resources, 
-            and ensure that everyone can participate in society, politics, and the economy.
-          </p>
-        </div>
-        <div className="col-span-6">
-          <img src="/images/grants/inequality.svg" alt="Agency" className="object-cover w-full" />
-        </div>
+      <div className="hidden md:block space-y-20">
+        {items.map((item, index) => (
+          <div className="grid-cols-12 gap-20 grid" key={index}>
+            <div key={index} className={`col-span-6 ${isOdd(index + 1) ? 'order-1' : 'order-2'}`}>
+              <img src={item.image} alt={item.title} className="object-cover w-full" />
+            </div>
+            <div className={`col-span-6 ${isOdd(index + 1) ? 'order-2' : 'order-1'}`}>
+              <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4 whitespace-pre-line">{ item.title }</h1>
+              <p className="text-primaryDark leading-[150%]">
+                { item.description }
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="md:hidden">
         <MobileSlider items={items} />
       </div>
-    </section>
+    </section >
   );
 }

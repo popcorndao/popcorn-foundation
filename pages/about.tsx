@@ -1,6 +1,6 @@
 import MobileSlider from "components/Slider/MobileSlider";
 import React from "react";
-
+import { isOdd } from 'helpers';
 
 const items = [
   {
@@ -50,67 +50,20 @@ export default function About(): JSX.Element {
         </div>
       </div>
 
-      <div className="grid-cols-12 gap-20 hidden md:grid">
-        {/* diversity and inclusions */}
-        <div className="col-span-6">
-          <img src="/images/about/diversity.svg" alt="diversity and inclusion" className="object-cover w-full" />
-        </div>
-        <div className="col-span-6">
-          <h1 className="text-6xl text-black text-normal leading-[100%] mb-4">Diversity &amp; Inclusion</h1>
-          <p className="text-primaryDark leading-[150%]">
-            This is DeFi for the People. We believe in breaking down social and cultural barriers by creating a welcoming community
-            to anyone who is interested in creating positive social impact through DeFi.
-          </p>
-        </div>
-
-        {/* accessibility */}
-        <div className="col-span-6">
-          <h1 className="text-6xl text-black text-normal leading-[100%] mb-4">Accessibility</h1>
-          <p className="text-primaryDark leading-[150%]">
-            Our products, our community, our communications, and our goals are friendly,
-            transparent, relatable, easy to understand, and easy to use.
-          </p>
-        </div>
-        <div className="col-span-6">
-          <img src="/images/about/accessibility.svg" alt="accessibility" className="object-cover w-full" />
-        </div>
-        
-
-        {/* community */}
-        <div className="col-span-6">
-          <img src="/images/about/community.svg" alt="community" className="object-cover w-full" />
-        </div>
-        <div className="col-span-6">
-          <h1 className="text-6xl text-black text-normal leading-[100%] mb-4">Community</h1>
-          <p className="text-primaryDark leading-[150%]">
-            We look to foster empathy, collaboration, interconnection, and a non-rivalrous approach in all spheres,
-            and intend to influence global systems as such. We understand that we benefit when everyone benefits
-          </p>
-        </div>
-
-        {/* agency */}
-        <div className="col-span-6">
-          <h1 className="text-6xl text-black text-normal leading-[100%] mb-4">Agency</h1>
-          <p className="text-primaryDark leading-[150%]">
-            We believe that DeFi is a new financial system that gives individuals and communities 
-            the tools to embed individual and community agency.
-          </p>
-        </div>
-        <div className="col-span-6">
-          <img src="/images/about/agency.svg" alt="Agency" className="object-cover w-full" />
-        </div>
-
-        {/* leadership */}
-        <div className="col-span-6">
-          <img src="/images/about/leadership.svg" alt="leadership" className="object-cover w-full" />
-        </div>
-        <div className="col-span-6">
-          <h1 className="text-6xl text-black text-normal leading-[100%] mb-4">Leadership</h1>
-          <p className="text-primaryDark leading-[150%]">
-            We aim to be leaders in our communities, in the DeFi and Web3 space, 
-            in the Social Impact sector, and in our lives.
-          </p>
-        </div>
+      <div className="hidden md:block space-y-20">
+        {items.map((item, index) => (
+          <div className="grid-cols-12 gap-20 grid" key={index}>
+            <div key={index} className={`col-span-6 ${isOdd(index + 1) ? 'order-1' : 'order-2'}`}>
+              <img src={item.image} alt={item.title} className="object-cover w-full" />
+            </div>
+            <div className={`col-span-6 ${isOdd(index + 1) ? 'order-2' : 'order-1'}`}>
+              <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4 whitespace-pre-line">{ item.title }</h1>
+              <p className="text-primaryDark leading-[150%]">
+                { item.description }
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className="md:hidden">
