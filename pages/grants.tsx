@@ -37,7 +37,7 @@ export default function Grant(): JSX.Element {
         <div className="col-span-12">
           <div className="rounded-lg p-6 md:px-8 md:py-9 bg-customYellow h-full flex flex-col justify-between relative">
             <div>
-              <h1 className="text-3xl lg:text-6xl text-black font-normal leading-[100%] pt-16 lg:pt-0">
+              <h1 className="text-6xl text-black font-normal leading-[100%] pt-16 lg:pt-0">
                 Get<br />
                 Grant
               </h1>

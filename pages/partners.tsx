@@ -6,7 +6,7 @@ export default function Partners(): JSX.Element {
   return (
     <>
       <div className="col-span-12 md:col-span-8 md:col-start-4 ">
-        <h6 className="text-3xl lg:text-6xl text-black font-normal leading-[100%] mb-10 md:mb-20">Our Partners</h6>
+        <h6 className="text-6xl text-black font-normal leading-[100%] mb-10 md:mb-20">Our Partners</h6>
         <SliderContainer slidesToShow={7}>
           <img src="/images/partners/banklessdao.png" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
           <img src="/images/partners/ohm.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />

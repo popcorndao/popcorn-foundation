@@ -1,4 +1,4 @@
-import React, { useRef, useState, FC } from "react";
+import React, { useRef, useState, FC, Fragment } from "react";
 import Slider from "react-slick";
 
 let inactiveDot = "bg-black bg-opacity-25";
@@ -41,8 +41,8 @@ const MobileSlider: FC<IMobileSlider> = ({ items }) => {
   return (
     <>
       <Slider {...settings} ref={(slider) => (customSlider.current = slider)}>
-        {items.map((item) => (
-          <>
+        {items.map((item, i) => (
+          <Fragment key={i}>
             <div>
               <img src={item.image} alt={item.title} />
               <h1 className="text-black text-3xl leading-[110%] mt-4">{item.title}</h1>
@@ -51,13 +51,14 @@ const MobileSlider: FC<IMobileSlider> = ({ items }) => {
             <button className="flex justify-center pt-6 gap-5 w-full">
               {items.map((_, index) => (
                 <div
+                  key={index}
                   className={`${currentSlide == index ? activeDot : inactiveDot
                     } rounded-full h-3 w-3 transition-all`}
                   onClick={() => gotoSlide(index)}
                 ></div>
               ))}
             </button>
-          </>
+          </Fragment>
         ))}
       </Slider>
     </>

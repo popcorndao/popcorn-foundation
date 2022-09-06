@@ -4,10 +4,13 @@ export default function PopcornDao(): JSX.Element {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-12 md:col-span-3">
-        <h1 className="text-6xl text-black leading-[100%] font-normal mb-4">
+        <h1 className="text-6xl text-black leading-[100%] font-normal mb-4 hidden lg:block">
           PopcornDAO
         </h1>
-        <p className="text-base font-normal text-primaryDark pb-8">
+        <h1 className="text-6xl text-black leading-[100%] font-normal mb-4 lg:hidden">
+          Popcorn<br />DAO
+        </h1>
+        <p className="text-base font-normal text-primaryDark">
           PopcornDAO is a decentralized autonomous
           organization of members holding
           Popcorn governance tokens (POP). Popcorn
@@ -21,9 +24,9 @@ export default function PopcornDao(): JSX.Element {
           the public benefit in perpetuity.
         </p>
       </div>
-      <div className="col-span-12 md:col-span-6 md:col-end-13 mt-12 md:mt-0">
+      <div className="col-span-12 md:col-span-6 md:col-end-13 mt-10 md:mt-0">
         <div className="rounded-lg p-6 md:px-8 md:py-9 bg-pink h-full flex flex-col justify-between">
-          <p className="text-3xl lg:text-6xl text-black font-normal leading-[100%]">
+          <p className="text-3xl lg:text-6xl text-black font-normal leading-[100%] hidden lg:block">
             Enjoy noble yield <br />
             while creating <br />
             real world impact <br />

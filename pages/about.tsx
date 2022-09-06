@@ -34,7 +34,7 @@ export default function About(): JSX.Element {
   return (
     <section>
       <div className="grid grid-cols-12 mb-10 lg:mb-20">
-        <div className="col-span-12 lg:col-span-6 mb-10 kg:mb-0">
+        <div className="col-span-12 lg:col-span-6 mb-10 lg:mb-0">
           <h1 className="text-6xl text-black text-normal leading-[100%]">Our Values</h1>
         </div>
         <div className="col-span-12 lg:col-span-6">
