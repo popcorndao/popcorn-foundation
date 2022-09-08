@@ -1,6 +1,6 @@
 import useMediumArticles from "hooks/useMediumArticles";
 import React from "react";
-import { isOdd, removeImage } from 'helpers';
+import { isOdd, removeImage, truncateHtml } from 'helpers';
 import { DateTime } from 'luxon';
 import dompurify from 'dompurify';
 
@@ -51,13 +51,13 @@ const IndexPage = () => {
         {articles?.slice(0, currentSlice)?.map((article, index) => (
           <article className="grid-cols-12 grid lg:gap-x-8" key={index}>
             <div key={index} className={`col-span-12 md:col-span-6 ${isOdd(index + 1) ? 'lg:order-1' : 'lg:order-2'}`}>
-              <img src={article.thumbnail} alt={article.title} className="object-cover rounded-lg h-[400px]" />
+              <img src={article.thumbnail} alt={article.title} className="object-cover rounded-lg h-[400px] w-full" />
             </div>
             <div className={`col-span-12 md:col-span-6 ${isOdd(index + 1) ? 'lg:order-2' : 'lg:order-1'}`}>
               <dd className="text-[#AFAFAF] mb-4 text-base leading-8 mt-4 lg:mt-0">{formatArticleDate(article.pubDate)}</dd>
               <h1 className="text-3xl lg:text-6xl text-[#111827] text-normal leading-[100%] mb-4 whitespace-pre-line line-clamp-3">{ article.title }</h1>
-              <p className="text-primaryDark leading-[150%] line-clamp-4" dangerouslySetInnerHTML={{__html: dompurify.sanitize(removeImage(article.description), {FORCE_BODY: true})}}></p>
-              <a className="text-customPurple text-base mt-1" href={article.link} target="_blank" rel="noopener noreferrer">
+              <div className="text-primaryDark leading-[150%] relative" dangerouslySetInnerHTML={{__html: dompurify.sanitize(removeImage(truncateHtml(article.description, 400, '...')), {FORCE_BODY: true})}}></div>
+              <a className="text-customPurple text-base mt-2 block" href={article.link} target="_blank" rel="noopener noreferrer">
                 Read More
               </a>
             </div>
