@@ -2,6 +2,7 @@ import Head from "next/head";
 import Router from "next/router";
 import React, { useEffect, useState } from "react";
 import "../styles/globals.css";
+import Layout from "components/Layout";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -18,6 +19,14 @@ export default function MyApp(props) {
       setLoading(false);
     });
   }, []);
+
+  const getLayout =
+    Component.getLayout ||
+    (() => (
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    ));
 
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -42,7 +51,7 @@ export default function MyApp(props) {
           rel="stylesheet"
         ></link>
       </Head>
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </React.Fragment>
   );
 }
