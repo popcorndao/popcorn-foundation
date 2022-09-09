@@ -148,7 +148,7 @@ export const MobileMenu: React.FC = () => {
                         </div>
 
                         <div className="col-span-6">
-                          <p className="text-gray-900 font-medium leading-6 tracking-1"></p>
+                          <p className="text-gray-900 font-medium leading-6 tracking-1 opacity-0">site</p>
                           <div className="flex flex-col">
                             <Link href="/ideas">
                               <a href="" className="text-primary leading-6 mt-4">
