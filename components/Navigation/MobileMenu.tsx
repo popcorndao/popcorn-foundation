@@ -18,7 +18,7 @@ interface IToggleMenuProps {
 }
 
 const ToggleMenu: FC<IToggleMenuProps> = ({ menuVisible, toggleMenu }) => (
-  <div className="flex items-center gap-4">
+  <div className="flex items-center space-x-4">
     <button
       className="text-gray-500 w-10 relative focus:outline-none bg-white"
       onClick={() => toggleMenu(!menuVisible)}

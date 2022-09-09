@@ -15,8 +15,8 @@ export default function Partners(): JSX.Element {
           <img src="/images/partners/kenetic.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
           <img src="/images/partners/bigbrainholding.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
           <img src="/images/partners/impossiblefinance.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
-          <img src="/images/partners/cryptofoundersnetwork.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
-          <img src="/images/partners/hesticholdings.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
+          <img src="/images/partners/cryptofoundersnetwork.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain opacity-40" />
+          <img src="/images/partners/hesticholdings.svg" alt="" className="px-2 md:px-5 w-10 h-10 object-contain opacity-40" />
           <img src="/images/partners/jumpcap.png" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
           <img src="/images/partners/theLAO.png" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />
           <img src="/images/partners/xbto.png" alt="" className="px-2 md:px-5 w-10 h-10 object-contain" />

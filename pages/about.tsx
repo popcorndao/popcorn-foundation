@@ -39,7 +39,7 @@ export default function About(): JSX.Element {
         </div>
         <div className="col-span-12 lg:col-span-6">
           <div className="rounded-lg p-6 md:px-8 md:py-9 bg-customLightGreen h-full flex flex-row md:flex-col justify-between min-h-[228px] lg:min-h-[400px]">
-            <p className="text-3xl lg:text-6xl text-black font-normal leading-[100%]">
+            <p className="text-3xl md:text-6xl text-black font-normal leading-[100%]">
               Do well <br />
               Do good <br />
             </p>
@@ -57,9 +57,9 @@ export default function About(): JSX.Element {
               <img src={item.image} alt={item.title} className="object-cover w-full" />
             </div>
             <div className={`col-span-6 ${isOdd(index + 1) ? 'order-2' : 'order-1'}`}>
-              <h1 className="text-6xl text-[#111827] text-normal leading-[100%] mb-4 whitespace-pre-line">{ item.title }</h1>
+              <h1 className="md:text-6xl text-[#111827] text-normal leading-[100%] mb-4 whitespace-pre-line">{item.title}</h1>
               <p className="text-primaryDark leading-[150%]">
-                { item.description }
+                {item.description}
               </p>
             </div>
           </div>

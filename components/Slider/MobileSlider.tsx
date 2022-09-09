@@ -45,10 +45,10 @@ const MobileSlider: FC<IMobileSlider> = ({ items }) => {
           <Fragment key={i}>
             <div>
               <img src={item.image} alt={item.title} />
-              <h1 className="text-black text-3xl leading-[110%] mt-4">{item.title}</h1>
+              <h1 className="text-3xl leading-[110%] mt-4">{item.title}</h1>
               <p className="text-primaryDark leading-[150%] mt-4">{item.description}</p>
             </div>
-            <button className="flex justify-center pt-6 gap-5 w-full">
+            <button className="flex justify-center pt-6 space-x-5 w-full">
               {items.map((_, index) => (
                 <div
                   key={index}

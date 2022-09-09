@@ -55,7 +55,7 @@ const Footer = () => {
           Popcorn is an audited, non-custodial DeFi wealth manager with yield-generating products that simultaneously fund nonprofit and social impact organizations.
         </p>
 
-        <div className="flex justify-between md:justify-start md:gap-7 order-1 md:order-2">
+        <div className="flex justify-between md:justify-start md:space-x-7 order-1 md:order-2">
           <a
             href="https://twitter.com/Popcorn_DAO"
             onMouseEnter={() => onHoverIcon(setTwitterColor)}
@@ -101,9 +101,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="col-span-12 md:col-span-2 flex flex-col md:flex-row gap-12 md:gap-0 md:justify-between order-2 md:order-3 mt-12 md:mt-0">
+      <div className="col-span-12 md:col-span-2 flex md:justify-between order-2 md:order-3 mt-12 md:mt-0 space-x-5 lg:space-x-0">
         <div>
-          <p className="text-gray-900 font-medium leading-6 tracking-1">Site</p>
+          <p className="text-[#111827] font-medium leading-6 tracking-1">Site</p>
           <div className="flex flex-col">
             <Link href="/">
               <a className=" text-primary hover:text-black leading-6 mt-4">Home</a>
@@ -117,11 +117,11 @@ const Footer = () => {
           </div>
         </div>
         <div>
+          <p className="text-gray-900 font-medium leading-6 tracking-1 opacity-0">Site</p>
           <div className="flex flex-col">
-            <p className="text-gray-900 font-medium leading-6 tracking-1"></p>
             <Link href="/ideas">
               <a className="text-primary hover:text-black leading-6 mt-4">
-                ideas
+                Ideas
               </a>
             </Link>
             <Link href="/grants">
