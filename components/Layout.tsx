@@ -11,7 +11,7 @@ const Layout = (props: { children: React.ReactNode }) => {
         <main className="mt-4 md:mt-[48px]">
           {props.children}
         </main>
-        <div className="lg:mt-20">
+        <div className="md:mt-20">
           <div className="hidden md:block">
             <img src="/images/footer-background.svg" alt="" className="rounded-lg w-full object-cover" />
           </div>
