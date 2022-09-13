@@ -82,7 +82,7 @@ export const MobileMenu: React.FC = () => {
                 leaveTo="translate-x-full"
               >
                 <div className="w-screen">
-                  <div className="h-full w-full flex flex-col justify-between pt-18 px-6 shadow-xl bg-white overflow-y-scroll">
+                  <div className="h-full w-full flex flex-col justify-between pt-5 px-6 shadow-xl bg-white overflow-y-scroll mt-7">
                     <div className="flex flex-col w-full">
                       <div className="pt-6 pb-6">
                         <NavbarLink label="Popcorn Foundation" url="/" isActive={router.pathname === "/"} />
