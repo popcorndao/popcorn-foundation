@@ -50,8 +50,8 @@ export default function Grant(): JSX.Element {
                 Contact us for more information on beneficiary criteria and the nomination process: grant@popcorn.foundation
               </p>
             </div>
-            <div className="absolute left-[70%] -top-2 lg:-top-8 2lg:left-[75%]">
-              <img src="/images/charity.svg" alt="charity icon" className="w-12 h-12 lg:w-[130px] lg:h-[130px]" />
+            <div className="absolute left-[70%] -top-2 lg:-top-4 2lg:left-[75%]">
+              <img src="/images/charity.svg" alt="charity icon" className="w-10 h-10 lg:w-[130px] lg:h-[130px]" />
             </div>
             <div className="absolute left-[80%] top-10 lg:top-[120px] 2lg:left-[85%]">
               <img src="/images/earth.svg" alt="earth icon" className="rotate-90 md:rotate-0 w-10 h-10 lg:w-[125px] lg:h-[125px]" />
