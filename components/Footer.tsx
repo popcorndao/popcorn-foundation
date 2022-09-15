@@ -101,7 +101,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="col-span-12 md:col-span-2 flex md:justify-between order-2 md:order-3 mt-12 md:mt-0 space-x-5 lg:space-x-0">
+      <div className="col-span-12 md:col-span-2 flex md:justify-between order-2 md:order-3 mt-12 md:mt-0">
         <div>
           <p className="text-[#111827] font-medium leading-6 tracking-1">Site</p>
           <div className="flex flex-col">
@@ -116,7 +116,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="ml-20 md:ml-0">
           <p className="text-gray-900 font-medium leading-6 tracking-1 opacity-0">Site</p>
           <div className="flex flex-col">
             <Link href="/ideas">
