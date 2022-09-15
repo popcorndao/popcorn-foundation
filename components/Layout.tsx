@@ -12,9 +12,9 @@ const Layout = (props: { children: React.ReactNode }) => {
           {props.children}
         </main>
         <div className="md:mt-20">
-          <div className="hidden">
+          {/* <div className="hidden">
             <img src="/images/nature.png" alt="nature" className="rounded-lg w-full object-cover" />
-          </div>
+          </div> */}
           <Footer />
         </div>
       </div>
